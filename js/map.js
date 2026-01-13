@@ -1,193 +1,402 @@
-// ===== CARTE INTERACTIVE =====
+// ===== CARTE INTERACTIVE LEAFLET =====
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Vérifier si l'élément map existe
-  const mapElement = document.getElementById('map');
-  if (!mapElement) return;
+  const mapContainer = document.getElementById('map');
+  if (!mapContainer) return;
 
-  // Initialiser la carte centrée sur le territoire
-  const map = L.map('map').setView([45.08, 5.78], 12);
-
-  // Ajouter le fond de carte OpenStreetMap
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 18,
-  }).addTo(map);
-
-  // Icônes personnalisées
-  const icons = {
-    commune: L.divIcon({
-      className: 'custom-marker commune-marker',
-      html: '<div class="marker-inner">🏘️</div>',
-      iconSize: [40, 40],
-      iconAnchor: [20, 40],
-      popupAnchor: [0, -40]
-    }),
-    patrimoine: L.divIcon({
-      className: 'custom-marker patrimoine-marker',
-      html: '<div class="marker-inner">🏰</div>',
-      iconSize: [40, 40],
-      iconAnchor: [20, 40],
-      popupAnchor: [0, -40]
-    }),
-    hebergement: L.divIcon({
-      className: 'custom-marker hebergement-marker',
-      html: '<div class="marker-inner">🏨</div>',
-      iconSize: [40, 40],
-      iconAnchor: [20, 40],
-      popupAnchor: [0, -40]
-    }),
-    insolite: L.divIcon({
-      className: 'custom-marker insolite-marker',
-      html: '<div class="marker-inner">🏕️</div>',
-      iconSize: [40, 40],
-      iconAnchor: [20, 40],
-      popupAnchor: [0, -40]
-    }),
-    thermes: L.divIcon({
-      className: 'custom-marker thermes-marker',
-      html: '<div class="marker-inner">♨️</div>',
-      iconSize: [40, 40],
-      iconAnchor: [20, 40],
-      popupAnchor: [0, -40]
-    })
-  };
-
-  // Données des points d'intérêt
-  const pointsInteret = [
-    // Communes
-    { lat: 45.0775, lng: 5.7725, type: 'communes', icon: icons.commune, 
-      title: 'Vizille', desc: 'Cœur patrimonial du territoire. Château et Musée de la Révolution française.' },
-    { lat: 45.1025, lng: 5.7486, type: 'communes', icon: icons.commune, 
-      title: 'Jarrie', desc: 'Pôle économique. Site privilégié pour le futur hôtel.' },
-    { lat: 45.1183, lng: 5.8100, type: 'communes', icon: icons.commune, 
-      title: 'Vaulnaveys-le-Haut', desc: 'Nature préservée, hébergements insolites.' },
-    { lat: 45.1083, lng: 5.7950, type: 'communes', icon: icons.commune, 
-      title: 'Vaulnaveys-le-Bas', desc: 'Porte vers les Thermes d\'Uriage.' },
-    { lat: 45.0983, lng: 5.7667, type: 'communes', icon: icons.commune, 
-      title: 'Montchaboud', desc: 'Village préservé, authenticité rurale.' },
-    { lat: 45.0617, lng: 5.7583, type: 'communes', icon: icons.commune, 
-      title: 'Les Mésages', desc: 'Tranquillité, vue sur la vallée.' },
-    
-    // Patrimoine
-    { lat: 45.0778, lng: 5.7728, type: 'patrimoine', icon: icons.patrimoine, 
-      title: 'Château de Vizille', desc: 'Musée de la Révolution française. 800 000 visiteurs/an. Entrée gratuite.',
-      link: 'https://www.chateau-vizille.fr' },
-    { lat: 45.1450, lng: 5.8300, type: 'patrimoine', icon: icons.thermes, 
-      title: 'Thermes d\'Uriage', desc: 'Station thermale réputée. Soins bien-être et récupération sportive.',
-      link: 'https://www.uriage-les-bains.com' },
-    
-    // Hébergements
-    { lat: 45.1453, lng: 5.8295, type: 'hebergements', icon: icons.hebergement, 
-      title: 'Grand Hôtel & Spa Uriage', desc: 'Hôtel 4 étoiles. Spa thermal, piscine, restaurant gastronomique.',
-      link: 'https://www.grand-hotel-uriage.com' },
-    { lat: 45.1350, lng: 5.8250, type: 'hebergements', icon: icons.hebergement, 
-      title: 'Auberge Saint-Michel', desc: 'Auberge de charme avec jardin et terrasse.',
-      link: 'https://www.booking.com' },
-    { lat: 45.0780, lng: 5.7720, type: 'hebergements', icon: icons.hebergement, 
-      title: 'Locations Airbnb Vizille', desc: '60+ appartements et maisons. Dès 17€/nuit.',
-      link: 'https://www.airbnb.fr/vizille-france/stays' },
-    { lat: 45.1200, lng: 5.8150, type: 'hebergements', icon: icons.insolite, 
-      title: 'Camping du Buisson', desc: 'Yourtes avec jacuzzi, dôme géodésique. Vue panoramique.',
-      link: 'https://www.camping-grenoble-alpes.fr' },
-    { lat: 45.1400, lng: 5.8200, type: 'hebergements', icon: icons.insolite, 
-      title: 'Cabanes & Dômes', desc: 'Hébergements insolites : cabanes perchées, bulles transparentes.',
-      link: 'https://www.abracadaroom.com' },
-  ];
-
-  // Groupes de couches pour le filtrage
-  const layers = {
-    all: L.layerGroup(),
-    communes: L.layerGroup(),
-    hebergements: L.layerGroup(),
-    patrimoine: L.layerGroup()
-  };
-
-  // Ajouter les marqueurs
-  pointsInteret.forEach(poi => {
-    const popupContent = `
-      <div class="map-popup">
-        <h4>${poi.title}</h4>
-        <p>${poi.desc}</p>
-        ${poi.link ? `<a href="${poi.link}" target="_blank" class="popup-link">En savoir plus →</a>` : ''}
-      </div>
-    `;
-    
-    const marker = L.marker([poi.lat, poi.lng], { icon: poi.icon })
-      .bindPopup(popupContent);
-    
-    marker.addTo(layers.all);
-    marker.addTo(layers[poi.type]);
+  // Initialize map centered on Vizille
+  const map = L.map('map', {
+    center: [45.095, 5.79],
+    zoom: 12,
+    scrollWheelZoom: false
   });
 
-  // Afficher tous les points par défaut
-  layers.all.addTo(map);
+  // Add OpenStreetMap tiles with custom style
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors',
+    maxZoom: 18
+  }).addTo(map);
 
-  // Gestion des filtres
-  const filterButtons = document.querySelectorAll('.carte-filter');
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-      // Retirer la classe active de tous les boutons
-      filterButtons.forEach(b => b.classList.remove('active'));
-      this.classList.add('active');
+  // Enable scroll zoom on click
+  map.on('click', function() {
+    map.scrollWheelZoom.enable();
+  });
+
+  // Custom icon creator
+  const createIcon = (emoji, color) => {
+    return L.divIcon({
+      html: `<div style="
+        background: ${color};
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+        border: 3px solid white;
+      ">${emoji}</div>`,
+      className: 'custom-marker',
+      iconSize: [40, 40],
+      iconAnchor: [20, 20],
+      popupAnchor: [0, -20]
+    });
+  };
+
+  // ===== DATA: Points of Interest =====
+  const poiData = {
+    communes: [
+      {
+        name: 'Vizille',
+        lat: 45.0775,
+        lng: 5.7725,
+        desc: 'Cœur patrimonial du territoire. Château de Vizille et Musée de la Révolution française.',
+        icon: '🏰',
+        color: '#1e3a5f',
+        link: 'https://www.chateau-vizille.fr'
+      },
+      {
+        name: 'Jarrie',
+        lat: 45.1025,
+        lng: 5.7486,
+        desc: 'Pôle économique avec la gare TER Jarrie-Vizille. Accès A480.',
+        icon: '🚉',
+        color: '#1e3a5f'
+      },
+      {
+        name: 'Vaulnaveys-le-Haut',
+        lat: 45.1183,
+        lng: 5.8100,
+        desc: 'Village nature avec hébergements insolites et vue sur Belledonne.',
+        icon: '🌲',
+        color: '#1e3a5f'
+      },
+      {
+        name: 'Vaulnaveys-le-Bas',
+        lat: 45.1083,
+        lng: 5.7950,
+        desc: 'Porte vers Uriage et ses thermes. Golf et parcours cyclistes.',
+        icon: '⛳',
+        color: '#1e3a5f'
+      },
+      {
+        name: 'Montchaboud',
+        lat: 45.0983,
+        lng: 5.7667,
+        desc: 'Village authentique préservé au cœur du territoire.',
+        icon: '🏡',
+        color: '#1e3a5f'
+      },
+      {
+        name: 'Les Mésages',
+        lat: 45.0617,
+        lng: 5.7583,
+        desc: 'Petit village de caractère avec vue panoramique.',
+        icon: '🏘️',
+        color: '#1e3a5f'
+      }
+    ],
+    hebergements: [
+      {
+        name: 'Grand Hôtel & Spa Uriage',
+        lat: 45.1453,
+        lng: 5.8295,
+        desc: 'Hôtel 4 étoiles avec spa thermal, piscine chauffée et restaurant gastronomique.',
+        icon: '🏨',
+        color: '#c9a227',
+        link: 'https://www.grand-hotel-uriage.com'
+      },
+      {
+        name: 'Auberge Saint-Michel',
+        lat: 45.1350,
+        lng: 5.8250,
+        desc: 'Auberge de charme à Saint-Martin-d\'Uriage avec jardin.',
+        icon: '🏠',
+        color: '#c9a227'
+      },
+      {
+        name: 'Airbnb Vizille',
+        lat: 45.0780,
+        lng: 5.7720,
+        desc: '60+ locations disponibles. Studios dès 17€/nuit, maisons familiales.',
+        icon: '🏘️',
+        color: '#c9a227',
+        link: 'https://www.airbnb.fr/vizille-france/stays'
+      },
+      {
+        name: 'Camping du Buisson',
+        lat: 45.1200,
+        lng: 5.8150,
+        desc: 'Hébergements insolites : yourtes avec jacuzzi et vue panoramique.',
+        icon: '🏕️',
+        color: '#2d6a4f',
+        link: 'https://www.camping-grenoble-alpes.fr'
+      },
+      {
+        name: 'Cabanes & Dômes Belledonne',
+        lat: 45.1400,
+        lng: 5.8200,
+        desc: 'Cabanes perchées et dômes transparents. Nuit sous les étoiles.',
+        icon: '🌲',
+        color: '#2d6a4f'
+      }
+    ],
+    patrimoine: [
+      {
+        name: 'Château de Vizille',
+        lat: 45.0778,
+        lng: 5.7728,
+        desc: 'Musée de la Révolution française. Parc de 100 hectares. Entrée gratuite.',
+        icon: '🏛️',
+        color: '#9c27b0',
+        link: 'https://www.chateau-vizille.fr'
+      },
+      {
+        name: 'Thermes d\'Uriage',
+        lat: 45.1450,
+        lng: 5.8300,
+        desc: 'Station thermale depuis 1823. Soins dermatologiques et rhumatologie.',
+        icon: '♨️',
+        color: '#9c27b0',
+        link: 'https://www.uriage-les-bains.com'
+      },
+      {
+        name: 'Château d\'Uriage',
+        lat: 45.1420,
+        lng: 5.8280,
+        desc: 'Château médiéval surplombant la vallée. Vue panoramique.',
+        icon: '🏰',
+        color: '#9c27b0'
+      }
+    ],
+    restaurants: [
+      {
+        name: 'Les Terrasses d\'Uriage',
+        lat: 45.1455,
+        lng: 5.8290,
+        desc: 'Restaurant étoilé du chef Christophe Aribert. Cuisine créative.',
+        icon: '⭐',
+        color: '#e74c3c'
+      },
+      {
+        name: 'Le Floréal',
+        lat: 45.0776,
+        lng: 5.7730,
+        desc: 'Restaurant dans le parc du Château de Vizille. Cadre exceptionnel.',
+        icon: '🍽️',
+        color: '#e74c3c',
+        link: 'https://www.lefloreal.net'
+      },
+      {
+        name: 'Le Chalet Gourmand',
+        lat: 45.0770,
+        lng: 5.7715,
+        desc: 'Pizzas artisanales au feu de bois. Ambiance conviviale.',
+        icon: '🍕',
+        color: '#e74c3c'
+      },
+      {
+        name: 'Houmous & Curry',
+        lat: 45.0782,
+        lng: 5.7735,
+        desc: 'Cuisine libanaise et indienne fait maison. Mezzés et grillades.',
+        icon: '🥘',
+        color: '#e74c3c'
+      },
+      {
+        name: 'Restaurant des Mésanges',
+        lat: 45.1355,
+        lng: 5.8255,
+        desc: 'Cuisine de terroir à Saint-Martin-d\'Uriage. Vue montagne.',
+        icon: '🍳',
+        color: '#e74c3c'
+      }
+    ],
+    parcours: [
+      {
+        name: 'Départ Boucle Familiale',
+        lat: 45.0778,
+        lng: 5.7728,
+        desc: '15 km autour du Château. Idéal familles et VAE.',
+        icon: '🚴',
+        color: '#48bb78'
+      },
+      {
+        name: 'Col de la Crête de Malbouchet',
+        lat: 45.1150,
+        lng: 5.8050,
+        desc: 'Point culminant du parcours sportif. Vue 360° exceptionnelle.',
+        icon: '⛰️',
+        color: '#ed8936'
+      }
+    ]
+  };
+
+  // ===== CREATE LAYER GROUPS =====
+  const layers = {
+    communes: L.layerGroup(),
+    hebergements: L.layerGroup(),
+    patrimoine: L.layerGroup(),
+    restaurants: L.layerGroup(),
+    parcours: L.layerGroup()
+  };
+
+  // Add markers to layers
+  Object.keys(poiData).forEach(category => {
+    poiData[category].forEach(poi => {
+      const marker = L.marker([poi.lat, poi.lng], {
+        icon: createIcon(poi.icon, poi.color)
+      });
+
+      let popupContent = `
+        <div style="min-width: 200px; padding: 5px;">
+          <h3 style="margin: 0 0 8px 0; color: #1e3a5f; font-size: 1.1rem;">${poi.icon} ${poi.name}</h3>
+          <p style="margin: 0 0 10px 0; color: #4a5568; font-size: 0.9rem; line-height: 1.4;">${poi.desc}</p>
+      `;
       
-      // Récupérer le filtre
-      const filter = this.dataset.filter;
+      if (poi.link) {
+        popupContent += `<a href="${poi.link}" target="_blank" style="
+          display: inline-block;
+          background: #1e3a5f;
+          color: white;
+          padding: 6px 12px;
+          border-radius: 20px;
+          font-size: 0.8rem;
+          text-decoration: none;
+        ">En savoir plus →</a>`;
+      }
       
-      // Retirer toutes les couches
-      Object.values(layers).forEach(layer => map.removeLayer(layer));
-      
-      // Ajouter la couche correspondante
-      layers[filter].addTo(map);
+      popupContent += '</div>';
+
+      marker.bindPopup(popupContent);
+      layers[category].addLayer(marker);
     });
   });
 
-  // Style des marqueurs (ajouté via CSS)
-  const style = document.createElement('style');
-  style.textContent = `
-    .custom-marker {
-      background: none;
-      border: none;
-    }
-    .marker-inner {
-      width: 40px;
-      height: 40px;
-      background: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-      border: 3px solid #1e3a5f;
-      transition: transform 0.2s;
-    }
-    .marker-inner:hover {
-      transform: scale(1.1);
-    }
-    .patrimoine-marker .marker-inner { border-color: #9c27b0; }
-    .hebergement-marker .marker-inner { border-color: #c9a227; }
-    .insolite-marker .marker-inner { border-color: #2d6a4f; }
-    .thermes-marker .marker-inner { border-color: #0077b6; }
-    
-    .map-popup h4 {
-      margin: 0 0 8px 0;
-      color: #1e3a5f;
-      font-size: 1rem;
-    }
-    .map-popup p {
-      margin: 0 0 8px 0;
-      font-size: 0.875rem;
-      color: #4a5568;
-    }
-    .popup-link {
-      color: #c9a227;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 0.875rem;
-    }
-    .popup-link:hover {
-      text-decoration: underline;
-    }
+  // Add all layers to map by default
+  Object.values(layers).forEach(layer => layer.addTo(map));
+
+  // ===== FILTER BUTTONS =====
+  const filterButtons = document.querySelectorAll('.carte-filter');
+  
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      // Update active state
+      filterButtons.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      
+      const filter = this.dataset.filter;
+      
+      // Show/hide layers based on filter
+      Object.keys(layers).forEach(layerName => {
+        if (filter === 'all' || filter === layerName) {
+          map.addLayer(layers[layerName]);
+        } else {
+          map.removeLayer(layers[layerName]);
+        }
+      });
+    });
+  });
+
+  // ===== ADD ROUTE POLYLINES =====
+  
+  // Boucle Familiale (simplified)
+  const boucleFamiliale = [
+    [45.0775, 5.7725],
+    [45.0800, 5.7750],
+    [45.0850, 5.7800],
+    [45.0900, 5.7850],
+    [45.0850, 5.7900],
+    [45.0800, 5.7850],
+    [45.0775, 5.7725]
+  ];
+
+  L.polyline(boucleFamiliale, {
+    color: '#48bb78',
+    weight: 4,
+    opacity: 0.7,
+    dashArray: '10, 10'
+  }).addTo(map).bindPopup('🚴 Boucle Familiale - 15 km');
+
+  // Circuit Vizille-Uriage
+  const circuitUriage = [
+    [45.0775, 5.7725],
+    [45.0850, 5.7800],
+    [45.0950, 5.7900],
+    [45.1050, 5.8000],
+    [45.1150, 5.8100],
+    [45.1300, 5.8200],
+    [45.1450, 5.8300]
+  ];
+
+  L.polyline(circuitUriage, {
+    color: '#4299e1',
+    weight: 4,
+    opacity: 0.7,
+    dashArray: '10, 10'
+  }).addTo(map).bindPopup('🚴 Circuit Vizille → Uriage - 25 km');
+
+  // ===== MAP CONTROLS =====
+  
+  // Add scale
+  L.control.scale({
+    metric: true,
+    imperial: false,
+    position: 'bottomleft'
+  }).addTo(map);
+
+  // Fit bounds to show all markers
+  const allCoords = [];
+  Object.values(poiData).forEach(category => {
+    category.forEach(poi => {
+      allCoords.push([poi.lat, poi.lng]);
+    });
+  });
+  
+  if (allCoords.length > 0) {
+    const bounds = L.latLngBounds(allCoords);
+    map.fitBounds(bounds.pad(0.1));
+  }
+
+  // ===== GEOLOCATION =====
+  const locateButton = document.createElement('button');
+  locateButton.innerHTML = '📍';
+  locateButton.style.cssText = `
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    background: white;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   `;
-  document.head.appendChild(style);
+  locateButton.title = 'Ma position';
+  
+  locateButton.addEventListener('click', () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          map.setView([latitude, longitude], 14);
+          
+          L.marker([latitude, longitude], {
+            icon: createIcon('📍', '#e74c3c')
+          }).addTo(map).bindPopup('Vous êtes ici').openPopup();
+        },
+        () => {
+          alert('Impossible de récupérer votre position');
+        }
+      );
+    }
+  });
+  
+  mapContainer.appendChild(locateButton);
+
+  console.log('🗺️ Carte interactive chargée avec', allCoords.length, 'points d\'intérêt');
 });
