@@ -933,3 +933,194 @@ ul, ol {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== CARTE SECTION ===== */
+.carte-section {
+  background: var(--color-bg-warm);
+}
+
+.carte-container {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.carte-filters {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-bg);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.carte-filter {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--color-white);
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.carte-filter:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.carte-filter.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.carte-map {
+  height: 500px;
+  width: 100%;
+}
+
+.carte-legend {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: var(--color-bg);
+  border-top: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-text-light);
+}
+
+.legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+/* ===== HEBERGEMENTS SECTION ===== */
+.hebergements-section {
+  background: var(--color-white);
+}
+
+.hebergements-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.hebergement-card {
+  background: var(--color-bg);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  display: flex;
+  flex-direction: column;
+}
+
+.hebergement-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--color-accent);
+}
+
+.hebergement-card.premium {
+  background: linear-gradient(135deg, #faf8f5 0%, #f5f0e6 100%);
+  border-color: var(--color-accent);
+}
+
+.hebergement-card.insolite {
+  background: linear-gradient(135deg, #f0f7f4 0%, #e8f5e9 100%);
+}
+
+.hebergement-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.hebergement-card.insolite .hebergement-badge {
+  background: var(--color-green);
+}
+
+.hebergement-card h4 {
+  font-family: var(--font-display);
+  font-size: 1.125rem;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.hebergement-location {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.hebergement-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+  flex-grow: 1;
+}
+
+.hebergement-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.hebergement-features span {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: var(--color-white);
+  border-radius: 4px;
+  color: var(--color-text-muted);
+}
+
+.hebergement-card .btn {
+  padding: 0.6rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* ===== RESPONSIVE ADDITIONS ===== */
+@media (max-width: 1024px) {
+  .hebergements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .carte-map {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hebergements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .carte-map {
+    height: 350px;
+  }
+  
+  .carte-filters {
+    justify-content: center;
+  }
+  
+  .carte-legend {
+    justify-content: center;
+  }
+}
