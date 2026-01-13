@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vizille Escale des Alpes - Transformer un flux touristique en levier économique territorial. 6 communes unies, 800 000 visiteurs.">
+  <meta name="description" content="Vizille Escale des Alpes - 6 communes unies pour transformer 800 000 visiteurs en levier économique territorial.">
   <title>Vizille Escale des Alpes — Porte des Alpes à vélo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,18 +12,17 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚴</text></svg>">
 </head>
 <body>
-  <!-- Navigation -->
+  <!-- Navigation minimaliste -->
   <nav class="nav">
     <div class="nav-container">
-      <a href="#" class="logo">
-        <span class="logo-main">VIZILLE</span>
-        <span class="logo-sub">ESCALE<span class="logo-accent">DES</span>ALPES</span>
+      <a href="#" class="nav-logo">
+        <span class="nav-logo-main">VIZILLE</span>
+        <span class="nav-logo-sub">ESCALE<span class="nav-logo-des">DES</span>ALPES</span>
       </a>
       <ul class="nav-menu">
         <li><a href="#vision">Vision</a></li>
         <li><a href="#parcours">Parcours</a></li>
         <li><a href="#sejours">Séjours</a></li>
-        <li><a href="#hebergements">Hébergements</a></li>
         <li><a href="#carte">Carte</a></li>
         <li><a href="#contact" class="nav-cta">Contact</a></li>
       </ul>
@@ -31,497 +30,291 @@
     </div>
   </nav>
 
-  <!-- Hero - Style première page PDF -->
+  <!-- HERO - Reproduction exacte Page 1 PDF -->
   <section class="hero">
-    <div class="hero-split">
-      <div class="hero-left">
-        <div class="hero-image-container">
-          <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=1000&fit=crop" alt="Château de Vizille" class="hero-img">
-          <div class="hero-overlay"></div>
+    <div class="hero-badge">Municipales 2026 - Vizille - Économie & Tourisme</div>
+    
+    <div class="hero-container">
+      <!-- Image gauche avec coupe diagonale -->
+      <div class="hero-image hero-image-left">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=1000&fit=crop" alt="Château de Vizille">
+        <div class="hero-image-overlay"></div>
+      </div>
+      
+      <!-- Contenu central -->
+      <div class="hero-content">
+        <div class="hero-logo">
+          <h1 class="hero-title-main">VIZILLE</h1>
+          <p class="hero-title-sub">ESCALE<span class="hero-title-des">DES</span>ALPES</p>
+        </div>
+        
+        <div class="hero-tagline">
+          <p class="hero-plan">Plan de développement<br><span class="hero-years">2026-2030</span></p>
+          <p class="hero-mission">Transformer un flux touristique<br>en levier économique territorial</p>
         </div>
       </div>
-      <div class="hero-center">
-        <div class="hero-content">
-          <h1 class="hero-title">
-            <span class="title-main">VIZILLE</span>
-            <span class="title-sub">ESCALE<span class="title-accent">DES</span>ALPES</span>
-          </h1>
-          <div class="hero-tagline">
-            <p class="tagline-main">Plan de développement<br><strong>2026-2030</strong></p>
-            <p class="tagline-sub">Transformer un flux touristique<br>en levier économique territorial</p>
-          </div>
-        </div>
-      </div>
-      <div class="hero-right">
-        <div class="hero-image-container">
-          <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&h=1000&fit=crop" alt="Cycliste en montagne" class="hero-img">
-          <div class="hero-overlay"></div>
-        </div>
+      
+      <!-- Image droite avec coupe diagonale -->
+      <div class="hero-image hero-image-right">
+        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&h=1000&fit=crop" alt="Cycliste en montagne">
+        <div class="hero-image-overlay"></div>
       </div>
     </div>
+    
+    <!-- Bandeau 6 communes -->
     <div class="hero-communes">
       <span>VIZILLE</span>
-      <span class="separator">•</span>
+      <span class="dot">•</span>
       <span>LES MÉSAGES</span>
-      <span class="separator">•</span>
+      <span class="dot">•</span>
       <span>MONTCHABOUD</span>
-      <span class="separator">•</span>
+      <span class="dot">•</span>
       <span>VAULNAVEYS-LE-HAUT</span>
-      <span class="separator">•</span>
+      <span class="dot">•</span>
       <span>VAULNAVEYS-LE-BAS</span>
-      <span class="separator">•</span>
+      <span class="dot">•</span>
       <span>JARRIE</span>
     </div>
   </section>
 
-  <!-- Vision - Entonnoir 800 000 -->
-  <section id="vision" class="section vision-section">
+  <!-- Section Vision - Entonnoir 800 000 -->
+  <section id="vision" class="section section-cream">
     <div class="container">
-      <div class="section-header editorial">
-        <span class="section-overline">Modern Heritage & Editorial</span>
-        <h2>Le Constat & La Stratégie</h2>
-      </div>
-      <div class="vision-grid">
-        <div class="vision-left">
-          <h3 class="vision-title">Le Constat</h3>
-          <p>Le Château est un site majeur de l'Isère, mais les retombées économiques locales sont limitées. <strong>Les visiteurs repartent sans consommer.</strong></p>
+      <p class="section-overline">Modern Heritage & Editorial</p>
+      <div class="vision-layout">
+        <div class="vision-col vision-left">
+          <h3 class="vision-heading">Le Constat</h3>
+          <p>Le Château est un site majeur de l'Isère, mais les retombées économiques locales sont limitées. Les visiteurs repartent sans consommer.</p>
         </div>
-        <div class="vision-center">
+        
+        <div class="vision-col vision-center">
           <div class="funnel">
-            <div class="funnel-number">800 000</div>
-            <div class="funnel-label">visiteurs/an au château</div>
-            <div class="funnel-visual">
-              <div class="funnel-step step-1">
-                <span class="step-title">FLUX</span>
-                <span class="step-desc">Visiteurs de passage</span>
+            <div class="funnel-top">
+              <span class="funnel-number">800 000</span>
+              <span class="funnel-label">visiteurs/an au château</span>
+            </div>
+            <div class="funnel-body">
+              <div class="funnel-step funnel-flux">
+                <strong>FLUX :</strong><br>Visiteurs de passage
               </div>
-              <div class="funnel-step step-2">
-                <span class="step-title">APPROCHE</span>
-                <span class="step-desc">Capter & Orienter</span>
+              <div class="funnel-step funnel-approche">
+                <strong>APPROCHE :</strong><br>Capter & Orienter
               </div>
-              <div class="funnel-step step-3">
-                <span class="step-title">OBJECTIF</span>
-                <span class="step-desc">Transformer en client local</span>
+              <div class="funnel-step funnel-objectif">
+                <strong>OBJECTIF :</strong><br>Transformer en client local
               </div>
             </div>
           </div>
         </div>
-        <div class="vision-right">
-          <h3 class="vision-title">La Stratégie</h3>
-          <p>Passer d'un flux à un stock. Créer des parcours <strong>Château → Centre-ville → Hébergement.</strong></p>
+        
+        <div class="vision-col vision-right">
+          <h3 class="vision-heading">La Stratégie</h3>
+          <p>Passer d'un flux à un stock. Créer des parcours Château → Centre-ville → Hébergement.</p>
         </div>
       </div>
+      
       <div class="vision-baseline">
         <p>800 000 visiteurs, autant d'opportunités.</p>
       </div>
     </div>
   </section>
 
-  <!-- 6 Communes -->
-  <section class="section communes-section">
+  <!-- Section 4 Boucles -->
+  <section id="parcours" class="section section-white">
     <div class="container">
-      <div class="section-header editorial">
-        <h2>Une Réponse Territoriale à 6 Communes</h2>
-        <p class="section-subtitle">Passer de 'Vizille centre' à "Porte des Alpes".</p>
-      </div>
-      <div class="communes-map-grid">
-        <div class="commune-item vizille">
-          <div class="commune-marker"></div>
-          <div class="commune-info">
-            <h4>Vizille</h4>
-            <span class="commune-role">Hub touristique & Patrimoine</span>
-          </div>
+      <p class="section-overline">Modern Heritage & Editorial</p>
+      <h2 class="section-title">4 Boucles Structurantes : Du Débutant au Grimpeur</h2>
+      
+      <div class="boucles-grid">
+        <div class="boucle-card boucle-verte">
+          <div class="boucle-icon">🚴</div>
+          <h3>Familiale</h3>
+          <p class="boucle-km">15 km</p>
+          <p class="boucle-desc">Autour du Château.<br>Berges de la Romanche.<br>Idéal familles & VAE.</p>
         </div>
-        <div class="commune-item jarrie">
-          <div class="commune-marker jarrie-color"></div>
-          <div class="commune-info">
-            <h4>Jarrie</h4>
-            <span class="commune-role">Hôtellerie & Business (Accès A480)</span>
-          </div>
+        <div class="boucle-card boucle-bleue">
+          <div class="boucle-icon">🚴</div>
+          <h3>Patrimoine</h3>
+          <p class="boucle-km">40 km</p>
+          <p class="boucle-desc">Villages des Coteaux.<br>Panoramas Belledonne.<br>Vizille - Montchaboud.</p>
         </div>
-        <div class="commune-item vaulnaveys-haut">
-          <div class="commune-marker"></div>
-          <div class="commune-info">
-            <h4>Vaulnaveys-le-Haut</h4>
-            <span class="commune-role">Sport & Montagne</span>
-          </div>
+        <div class="boucle-card boucle-ocre">
+          <div class="boucle-icon">🚴</div>
+          <h3>Sportive</h3>
+          <p class="boucle-km">55 km</p>
+          <p class="boucle-desc">Tour des Vaulnaveys.<br>Dénivelé important.<br>Incursion vers Uriage.</p>
         </div>
-        <div class="commune-item vaulnaveys-bas">
-          <div class="commune-marker"></div>
-          <div class="commune-info">
-            <h4>Vaulnaveys-le-Bas</h4>
-            <span class="commune-role">Centralité & Chambres d'hôtes</span>
-          </div>
-        </div>
-        <div class="commune-item montchaboud">
-          <div class="commune-marker"></div>
-          <div class="commune-info">
-            <h4>Montchaboud</h4>
-            <span class="commune-role">Nature & Hébergement Insolite</span>
-          </div>
-        </div>
-        <div class="commune-item mesages">
-          <div class="commune-marker"></div>
-          <div class="commune-info">
-            <h4>Les Mésages</h4>
-            <span class="commune-role">Authenticité & Gîtes</span>
-          </div>
+        <div class="boucle-card boucle-noire">
+          <div class="boucle-icon">🚴</div>
+          <h3>Oisans / Expert</h3>
+          <p class="boucle-km">70 km</p>
+          <p class="boucle-desc">Portes de l'Oisans.<br>Préparation Alpe d'Huez.<br>Séchilienne - Bourg d'Oisans.</p>
         </div>
       </div>
-      <p class="communes-baseline">L'alliance permet de créer une destination complète où le calme rural complète l'offre urbaine et patrimoniale.</p>
     </div>
   </section>
 
-  <!-- Opportunité Cyclotourisme -->
-  <section class="section opportunity-section">
+  <!-- Section Packages -->
+  <section id="sejours" class="section section-dark">
     <div class="container">
-      <div class="section-header editorial">
-        <h2>L'Opportunité Cyclotourisme</h2>
-        <p class="section-subtitle">Un Marché en Croissance</p>
+      <h2 class="section-title section-title-light">Créer le Produit Touristique : Packages Clés en Main</h2>
+      <p class="section-subtitle-light">La fusion Hébergement + Activité + Terroir.</p>
+      
+      <div class="packages-grid">
+        <div class="package-ticket package-vert">
+          <div class="ticket-header">
+            <span class="ticket-icon">👨‍👩‍👧</span>
+          </div>
+          <div class="ticket-body">
+            <h3>Week-end<br>Découverte</h3>
+            <hr class="ticket-divider">
+            <p class="ticket-public">Public : Famille</p>
+            <p>🏨 1 nuit, Visite Château,<br>🚴 Boucle Verte,<br>🍽️ Repas Terroir.</p>
+          </div>
+        </div>
+        
+        <div class="package-ticket package-bleu">
+          <div class="ticket-header">
+            <span class="ticket-icon">🚴</span>
+          </div>
+          <div class="ticket-body">
+            <h3>Séjour<br>Sportif</h3>
+            <hr class="ticket-divider">
+            <p class="ticket-public">Public : Cyclosportifs</p>
+            <p>📅 3 jours, Boucle<br>🚴 Rouge/Noire, Massage<br>♨️ Récupération (Uriage).</p>
+          </div>
+        </div>
+        
+        <div class="package-ticket package-ocre">
+          <div class="ticket-header">
+            <span class="ticket-icon">🗺️</span>
+          </div>
+          <div class="ticket-body">
+            <h3>Itinérance<br>6 Villages</h3>
+            <hr class="ticket-divider">
+            <p class="ticket-public">Public : Voyageurs à vélo</p>
+            <p>🚴 Circuit étape par étape,<br>🧳 Transfert bagages.</p>
+          </div>
+        </div>
       </div>
-      <div class="opportunity-grid">
-        <div class="opportunity-stat">
-          <div class="stat-icon">💰</div>
-          <div class="stat-content">
-            <h4>Pouvoir d'achat élevé</h4>
-            <p>Clientèle CSP+</p>
-          </div>
+    </div>
+  </section>
+
+  <!-- Section Opportunité +15% -->
+  <section class="section section-topo">
+    <div class="container">
+      <h2 class="section-title">L'Opportunité Cyclotourisme : Un Marché en Croissance</h2>
+      
+      <div class="opportunity-layout">
+        <div class="opp-stat">
+          <span class="opp-icon">💰</span>
+          <h4>Pouvoir d'achat élevé</h4>
+          <p>(Clientèle CSP+)</p>
         </div>
-        <div class="opportunity-stat">
-          <div class="stat-icon">📅</div>
-          <div class="stat-content">
-            <h4>Séjours longs</h4>
-            <p>Moyenne supérieure au tourisme de passage</p>
-          </div>
+        <div class="opp-stat">
+          <span class="opp-icon">📅</span>
+          <h4>Séjours longs</h4>
+          <p>(Moyenne supérieure au tourisme de passage)</p>
         </div>
-        <div class="opportunity-center">
-          <div class="growth-number">+15%</div>
-          <p>Croissance annuelle du marché vélo en France</p>
+        <div class="opp-center">
+          <span class="opp-number">+15%</span>
+          <p>Croissance annuelle du<br>marché vélo en France</p>
         </div>
-        <div class="opportunity-stat">
-          <div class="stat-icon">☀️</div>
-          <div class="stat-content">
-            <h4>Saisonnalité étendue</h4>
-            <p>Avril à Octobre</p>
-          </div>
+        <div class="opp-stat">
+          <span class="opp-icon">☀️🍂</span>
+          <h4>Saisonnalité étendue</h4>
+          <p>(Avril à Octobre)</p>
         </div>
-        <div class="opportunity-stat">
-          <div class="stat-icon">🛤️</div>
-          <div class="stat-content">
-            <h4>Position Carrefour</h4>
-            <p>Oisans / Vercors / Matheysine</p>
-          </div>
+        <div class="opp-stat">
+          <span class="opp-icon">🛤️</span>
+          <h4>Position Carrefour</h4>
+          <p>(Oisans / Vercors / Matheysine)</p>
         </div>
       </div>
-      <div class="opportunity-baseline">
+      
+      <div class="opp-baseline">
         <p>Le vélo n'est pas qu'un loisir, c'est un moteur économique.</p>
       </div>
     </div>
   </section>
 
-  <!-- 4 Boucles Structurantes -->
-  <section id="parcours" class="section parcours-section">
+  <!-- Section Carte -->
+  <section id="carte" class="section section-white">
     <div class="container">
-      <div class="section-header editorial">
-        <span class="section-overline">Modern Heritage & Editorial</span>
-        <h2>4 Boucles Structurantes</h2>
-        <p class="section-subtitle">Du Débutant au Grimpeur</p>
-      </div>
-      <div class="parcours-grid">
-        <div class="parcours-card familiale">
-          <div class="parcours-icon">🚴</div>
-          <h3>Familiale</h3>
-          <div class="parcours-distance">15 km</div>
-          <p>Autour du Château.<br>Berges de la Romanche.<br>Idéal familles & VAE.</p>
+      <h2 class="section-title">Explorer le Territoire</h2>
+      <p class="section-subtitle">Carte interactive des 6 communes</p>
+      <div class="map-wrapper">
+        <div class="map-filters">
+          <button class="map-filter active" data-filter="all">Tout</button>
+          <button class="map-filter" data-filter="communes">🏘️ Communes</button>
+          <button class="map-filter" data-filter="hebergements">🏨 Hébergements</button>
+          <button class="map-filter" data-filter="patrimoine">🏰 Patrimoine</button>
         </div>
-        <div class="parcours-card patrimoine">
-          <div class="parcours-icon">🚴</div>
-          <h3>Patrimoine</h3>
-          <div class="parcours-distance">40 km</div>
-          <p>Villages des Coteaux.<br>Panoramas Belledonne.<br>Vizille - Montchaboud.</p>
-        </div>
-        <div class="parcours-card sportive">
-          <div class="parcours-icon">🚴</div>
-          <h3>Sportive</h3>
-          <div class="parcours-distance">55 km</div>
-          <p>Tour des Vaulnaveys.<br>Dénivelé important.<br>Incursion vers Uriage.</p>
-        </div>
-        <div class="parcours-card expert">
-          <div class="parcours-icon">🚴</div>
-          <h3>Oisans / Expert</h3>
-          <div class="parcours-distance">70 km</div>
-          <p>Portes de l'Oisans.<br>Préparation Alpe d'Huez.<br>Séchilienne - Bourg d'Oisans.</p>
-        </div>
+        <div id="map" class="map-container"></div>
       </div>
     </div>
   </section>
 
-  <!-- Packages Touristiques -->
-  <section id="sejours" class="section packages-section">
+  <!-- Section Calendrier -->
+  <section class="section section-cream">
     <div class="container">
-      <div class="section-header editorial">
-        <h2>Créer le Produit Touristique</h2>
-        <p class="section-subtitle">Packages Clés en Main — La fusion Hébergement + Activité + Terroir.</p>
-      </div>
-      <div class="packages-grid">
-        <div class="package-card decouverte">
-          <div class="package-header">
-            <div class="package-icon">👨‍👩‍👧</div>
-          </div>
-          <div class="package-body">
-            <h3>Week-end<br>Découverte</h3>
-            <div class="package-divider"></div>
-            <p class="package-public">Public : Famille</p>
-            <ul class="package-list">
-              <li>🏨 1 nuit, Visite Château,</li>
-              <li>🚴 Boucle Verte,</li>
-              <li>🍽️ Repas Terroir.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="package-card sportif">
-          <div class="package-header">
-            <div class="package-icon">🚴</div>
-          </div>
-          <div class="package-body">
-            <h3>Séjour<br>Sportif</h3>
-            <div class="package-divider"></div>
-            <p class="package-public">Public : Cyclosportifs</p>
-            <ul class="package-list">
-              <li>🏨 3 jours, Boucle</li>
-              <li>🚴 Rouge/Noire, Massage</li>
-              <li>♨️ Récupération (Uriage).</li>
-            </ul>
-          </div>
-        </div>
-        <div class="package-card itinerance">
-          <div class="package-header">
-            <div class="package-icon">🗺️</div>
-          </div>
-          <div class="package-body">
-            <h3>Itinérance<br>6 Villages</h3>
-            <div class="package-divider"></div>
-            <p class="package-public">Public : Voyageurs à vélo</p>
-            <ul class="package-list">
-              <li>🚴 Circuit étape par étape,</li>
-              <li>🧳 Transfert bagages.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Hébergements par Segment -->
-  <section id="hebergements" class="section hebergements-section">
-    <div class="container">
-      <div class="section-header editorial">
-        <span class="section-overline">Modern Heritage & Editorial</span>
-        <h2>Stratégie d'Hébergement</h2>
-        <p class="section-subtitle">Une Offre Complémentaire</p>
-      </div>
-      <div class="hebergements-table">
-        <div class="hebergement-row">
-          <div class="hebergement-segment">
-            <span class="segment-icon">💼</span>
-            <h4>Affaires & Flux</h4>
-          </div>
-          <div class="hebergement-commune">Jarrie</div>
-          <div class="hebergement-type">Hôtellerie économique, Appart-hôtel</div>
-        </div>
-        <div class="hebergement-row">
-          <div class="hebergement-segment">
-            <span class="segment-icon">🏰</span>
-            <h4>Charme & Patrimoine</h4>
-          </div>
-          <div class="hebergement-commune">Vizille Centre</div>
-          <div class="hebergement-type">Chambres d'hôtes, Boutique hôtel</div>
-        </div>
-        <div class="hebergement-row">
-          <div class="hebergement-segment">
-            <span class="segment-icon">🌿</span>
-            <h4>Nature & Famille</h4>
-          </div>
-          <div class="hebergement-commune">Les Mésages, Vaulnaveys-le-Bas</div>
-          <div class="hebergement-type">Gîtes ruraux, Fermes</div>
-        </div>
-        <div class="hebergement-row">
-          <div class="hebergement-segment">
-            <span class="segment-icon">🏕️</span>
-            <h4>Expérientiel / Insolite</h4>
-          </div>
-          <div class="hebergement-commune">Montchaboud</div>
-          <div class="hebergement-type">Cabanes, Yourtes, Tiny Houses</div>
-        </div>
-        <div class="hebergement-row">
-          <div class="hebergement-segment">
-            <span class="segment-icon">🚴</span>
-            <h4>Sport & Étape</h4>
-          </div>
-          <div class="hebergement-commune">Vaulnaveys-le-Haut</div>
-          <div class="hebergement-type">Refuges, B&B Cyclistes</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Infrastructures -->
-  <section class="section infra-section">
-    <div class="container">
-      <div class="section-header editorial">
-        <h2>Infrastructures & Services</h2>
-        <p class="section-subtitle">L'Exigence du Label Accueil Vélo — Objectif : Labelliser 20 établissements sur le territoire.</p>
-      </div>
-      <div class="infra-grid">
-        <div class="infra-card">
-          <div class="infra-icon">🔒</div>
-          <h4>Arceaux sécurisés</h4>
-          <p>(Centres-bourgs)</p>
-        </div>
-        <div class="infra-card">
-          <div class="infra-icon">⚡</div>
-          <h4>Bornes de recharge VAE</h4>
-        </div>
-        <div class="infra-card">
-          <div class="infra-icon">🔧</div>
-          <h4>Stations de gonflage & réparation</h4>
-        </div>
-        <div class="infra-card">
-          <div class="infra-icon">💧</div>
-          <h4>Points d'eau potable</h4>
-        </div>
-      </div>
-      <div class="services-list">
-        <h4>Les Services</h4>
-        <ul>
-          <li>🚌 Navettes vers Bourg-d'Oisans & Uriage</li>
-          <li>🧳 Transfert de bagages pour l'itinérance</li>
-          <li>🔧 Partenariats Location & Réparation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Écosystème Partenarial -->
-  <section class="section ecosystem-section">
-    <div class="container">
-      <div class="section-header editorial">
-        <h2>L'Écosystème Partenarial & Commercialisation</h2>
-      </div>
-      <div class="ecosystem-hub">
-        <div class="ecosystem-center">
-          <div class="hub-icon">🚴</div>
-          <h3>VIZILLE<br>VÉLO</h3>
-        </div>
-        <div class="ecosystem-partners">
-          <div class="partner-card restaurateurs">
-            <h4>Restaurateurs</h4>
-            <p>🍽️ Menus énergétiques<br>⏰ horaires flexibles</p>
-          </div>
-          <div class="partner-card producteurs">
-            <h4>Producteurs Locaux</h4>
-            <p>🛒 Vente directe<br>🧺 paniers pique-nique</p>
-          </div>
-          <div class="partner-card thermes">
-            <h4>Thermes d'Uriage</h4>
-            <p>♨️ Partenaire stratégique<br>💆 Bien-être & Récupération</p>
-          </div>
-          <div class="partner-card digital">
-            <h4>Marketing Digital</h4>
-            <p>📱 Strava<br>🗺️ Komoot<br>🚴 France Vélo Tourisme</p>
-          </div>
-        </div>
-      </div>
-      <div class="ecosystem-event">
-        <p><strong>Événementiel :</strong> Création du 'Tour des 6 villages' et accueil d'étapes du Dauphiné.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Carte Interactive -->
-  <section id="carte" class="section carte-section">
-    <div class="container">
-      <div class="section-header editorial">
-        <h2>Explorer le Territoire</h2>
-        <p class="section-subtitle">Carte interactive des 6 communes et points d'intérêt</p>
-      </div>
-      <div class="carte-container">
-        <div class="carte-filters">
-          <button class="carte-filter active" data-filter="all">Tout</button>
-          <button class="carte-filter" data-filter="communes">🏘️ Communes</button>
-          <button class="carte-filter" data-filter="hebergements">🏨 Hébergements</button>
-          <button class="carte-filter" data-filter="patrimoine">🏰 Patrimoine</button>
-          <button class="carte-filter" data-filter="services">🔧 Services vélo</button>
-        </div>
-        <div id="map" class="carte-map"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Calendrier -->
-  <section class="section calendar-section">
-    <div class="container">
-      <div class="section-header editorial">
-        <h2>Calendrier Prévisionnel 2026-2032</h2>
-      </div>
+      <h2 class="section-title">Calendrier Prévisionnel 2026-2032</h2>
+      
       <div class="timeline">
-        <div class="timeline-phase phase-1">
-          <div class="phase-header">
-            <div class="phase-dot"></div>
+        <div class="timeline-line"></div>
+        <div class="timeline-item timeline-bleu">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
             <h4>Court Terme (1 an)</h4>
+            <ul>
+              <li>💻 Lancement Site Web</li>
+              <li>🔒 Installation Arceaux (15 points)</li>
+              <li>🗺️ Identification foncier</li>
+            </ul>
           </div>
-          <ul>
-            <li>💻 Lancement Site Web</li>
-            <li>🔒 Installation Arceaux (15 points)</li>
-            <li>🗺️ Identification foncier</li>
-          </ul>
         </div>
-        <div class="timeline-phase phase-2">
-          <div class="phase-header">
-            <div class="phase-dot"></div>
+        <div class="timeline-item timeline-ocre">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
             <h4>Moyen Terme (1-3 ans)</h4>
+            <ul>
+              <li>🚴 Aménagement 4 boucles</li>
+              <li>🏅 20 Labels Accueil Vélo</li>
+              <li>🏨 Création 15 hébergements</li>
+            </ul>
           </div>
-          <ul>
-            <li>🚴 Aménagement 4 boucles</li>
-            <li>🏅 20 Labels Accueil Vélo</li>
-            <li>🏨 Création 15 hébergements</li>
-          </ul>
         </div>
-        <div class="timeline-phase phase-3">
-          <div class="phase-header">
-            <div class="phase-dot"></div>
+        <div class="timeline-item timeline-vert">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
             <h4>Long Terme (3-6 ans)</h4>
+            <ul>
+              <li>🏨 Ouverture Hôtel Jarrie</li>
+              <li>🛤️ Connexion Via Rhôna complète</li>
+              <li>🎯 Destination de référence</li>
+            </ul>
           </div>
-          <ul>
-            <li>🏨 Ouverture Hôtel Jarrie</li>
-            <li>🛤️ Connexion Via Rhôna complète</li>
-            <li>🎯 Destination de référence</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Conclusion -->
-  <section class="section conclusion-section">
+  <section class="section section-conclusion">
     <div class="container">
-      <div class="conclusion-content">
-        <h2 class="conclusion-title">Conclusion : Une Ambition Commune</h2>
-        <div class="conclusion-equation">
-          <span class="eq-part">6 Communes Unies</span>
-          <span class="eq-equals">=</span>
-          <span class="eq-part">1 Destination Forte</span>
-        </div>
-        <div class="conclusion-formula">
-          <span>800 000 Visiteurs</span>
-          <span class="formula-times">×</span>
-          <span>1 Nuit Supplémentaire</span>
-          <span class="formula-equals">=</span>
-        </div>
-        <p class="conclusion-result">Transformation Économique du Territoire</p>
-        <div class="conclusion-cta">
-          <p>Validation de la feuille de route & Lancement du Comité de Pilotage.</p>
-        </div>
+      <h2 class="conclusion-heading">Conclusion : Une Ambition Commune</h2>
+      
+      <p class="conclusion-equation">6 Communes Unies = 1 Destination Forte</p>
+      
+      <p class="conclusion-formula">
+        800 000 Visiteurs <span class="formula-sign">×</span> 1 Nuit Supplémentaire<br>
+        <span class="formula-equals">=</span>
+      </p>
+      
+      <p class="conclusion-result">Transformation Économique du Territoire</p>
+      
+      <div class="conclusion-cta">
+        Validation de la feuille de route & Lancement du Comité de Pilotage.
       </div>
     </div>
   </section>
@@ -531,38 +324,37 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <div class="logo footer-logo">
-            <span class="logo-main">VIZILLE</span>
-            <span class="logo-sub">ESCALE<span class="logo-accent">DES</span>ALPES</span>
+          <div class="footer-logo">
+            <span class="footer-logo-main">VIZILLE</span>
+            <span class="footer-logo-sub">ESCALE<span class="footer-logo-des">DES</span>ALPES</span>
           </div>
           <p>Projet de développement touristique intercommunal<br>Municipales 2026 • Vizille • Économie & Tourisme</p>
         </div>
-        <div class="footer-links-col">
+        <div class="footer-col">
           <h4>Parcours</h4>
-          <a href="#parcours">Boucle Familiale</a>
-          <a href="#parcours">Boucle Patrimoine</a>
-          <a href="#parcours">Boucle Sportive</a>
-          <a href="#parcours">Boucle Oisans</a>
+          <a href="#parcours">Boucle Familiale (15 km)</a>
+          <a href="#parcours">Boucle Patrimoine (40 km)</a>
+          <a href="#parcours">Boucle Sportive (55 km)</a>
+          <a href="#parcours">Boucle Oisans (70 km)</a>
         </div>
-        <div class="footer-links-col">
+        <div class="footer-col">
           <h4>Partenaires</h4>
           <a href="https://www.chateau-vizille.fr" target="_blank">Château de Vizille</a>
           <a href="https://www.uriage-les-bains.com" target="_blank">Thermes d'Uriage</a>
           <a href="https://www.isere-tourisme.com" target="_blank">Isère Tourisme</a>
-          <a href="https://www.francevelotourisme.com" target="_blank">France Vélo Tourisme</a>
         </div>
-        <div class="footer-links-col">
+        <div class="footer-col">
           <h4>Contact</h4>
           <a href="mailto:contact@vizille-escale-alpes.fr">contact@vizille-escale-alpes.fr</a>
-          <a href="#">Office de Tourisme Intercommunal</a>
+          <a href="#">Office de Tourisme</a>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Vizille Escale des Alpes — 6 Communes Unies</p>
         <div class="footer-badges">
-          <span class="badge">🏅 Accueil Vélo</span>
-          <span class="badge">🏔️ Belledonne</span>
-          <span class="badge">🌿 Isère</span>
+          <span>🏅 Accueil Vélo</span>
+          <span>🏔️ Belledonne</span>
+          <span>🌿 Isère</span>
         </div>
       </div>
     </div>
