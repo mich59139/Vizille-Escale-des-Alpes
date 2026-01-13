@@ -420,3 +420,85 @@ strong { color: var(--slate); }
   .footer-content { flex-direction: column; }
   .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
 }
+
+/* ===== SECTION BUDGETS ===== */
+.budget-section { margin: 3rem 0; }
+.budget-section h3 { font-family: var(--font-display); font-size: 1.5rem; color: var(--slate); text-align: center; margin-bottom: 2rem; }
+.budget-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+.budget-card {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.budget-header {
+  padding: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.budget-eco .budget-header { background: #dcfce7; }
+.budget-mid .budget-header { background: #fef3c7; }
+.budget-plus .budget-header { background: #e0e7ff; }
+.budget-price {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+.budget-eco .budget-price { color: var(--green); }
+.budget-mid .budget-price { color: var(--ocre); }
+.budget-plus .budget-price { color: #6366f1; }
+.budget-header h4 { font-family: var(--font-display); font-size: 1.1rem; color: var(--slate); margin: 0; }
+.budget-card ul { list-style: none; padding: 1.25rem; }
+.budget-card li { padding: 0.3rem 0; font-size: 0.9rem; }
+.budget-card li::before { content: "✓"; margin-right: 0.5rem; color: var(--green); }
+.budget-target {
+  padding: 0.75rem 1.25rem;
+  background: var(--cream);
+  font-size: 0.8rem;
+  color: var(--text-light);
+  text-align: center;
+  font-style: italic;
+}
+
+/* Budget tags dans tableau */
+.budget-tag {
+  display: inline-block;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.budget-tag-eco { background: #dcfce7; color: var(--green); }
+.budget-tag-mid { background: #fef3c7; color: #b45309; }
+.budget-tag-plus { background: #e0e7ff; color: #4f46e5; }
+
+/* Target priority */
+.target-priority {
+  background: rgba(45, 106, 79, 0.2) !important;
+  border: 2px solid var(--green) !important;
+}
+
+/* Projet note */
+.projet-note {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #f0fdf4;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  color: var(--green);
+  font-style: italic;
+}
+
+/* Conclusion inclusive */
+.conclusion-inclusive {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+.conclusion-inclusive strong { color: var(--ocre); }
+
+/* Responsive budgets */
+@media (max-width: 768px) {
+  .budget-grid { grid-template-columns: 1fr; }
+}
