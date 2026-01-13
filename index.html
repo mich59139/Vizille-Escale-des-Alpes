@@ -3,537 +3,601 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vizille Escale des Alpes - Parcours vélo et randonnée au pied de Belledonne. 4 boucles cyclistes et sentiers pédestres.">
-  <title>Vizille Escale des Alpes — Parcours vélo & randonnée</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vizille Escale des Alpes — Dossier Décideurs 2026-2030</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚴</text></svg>">
 </head>
 <body>
   <!-- Navigation -->
   <nav class="nav">
-    <div class="nav-container">
-      <a href="#" class="nav-logo">
-        <span class="nav-logo-main">VIZILLE</span>
-        <span class="nav-logo-sub">ESCALE<span class="nav-logo-des">DES</span>ALPES</span>
-      </a>
-      <ul class="nav-menu">
-        <li><a href="#parcours">Parcours</a></li>
-        <li><a href="#sejours">Séjours</a></li>
-        <li><a href="#carte">Carte</a></li>
-        <li><a href="patrimoine.html">📜 Patrimoine</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-inner">
+      <div class="nav-logo">VIZILLE<span>ESCALE DES ALPES</span></div>
+      <div class="nav-links">
+        <a href="#constat">Le Constat</a>
+        <a href="#strategie">La Stratégie</a>
+        <a href="#territoire">Le Territoire</a>
+        <a href="#projets">Les Projets</a>
+        <a href="#gouvernance">Gouvernance</a>
+        <a href="#financement">Financement</a>
+        <a href="#calendrier">Calendrier</a>
+        <a href="#contact" class="nav-cta">Contact</a>
+      </div>
     </div>
   </nav>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-badge">Municipales 2026 - Vizille - Économie & Tourisme</div>
-    <div class="hero-container">
-      <div class="hero-image hero-image-left">
-        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=1000&fit=crop" alt="Château de Vizille">
-      </div>
-      <div class="hero-content">
-        <div class="hero-logo">
-          <h1 class="hero-title-main">VIZILLE</h1>
-          <p class="hero-title-sub">ESCALE<span class="hero-title-des">DES</span>ALPES</p>
+    <div class="hero-inner">
+      <span class="hero-badge">Municipales 2026 • Économie & Tourisme</span>
+      <h1 class="hero-title">VIZILLE<br><em>ESCALE DES ALPES</em></h1>
+      <p class="hero-sub">Plan de développement 2026-2030</p>
+      <p class="hero-mission">Transformer un flux touristique<br>en levier économique territorial</p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">800<span>k</span></div>
+          <div class="hero-stat-label">visiteurs/an au Château</div>
         </div>
-        <div class="hero-tagline">
-          <p class="hero-plan">Plan de développement<br><span class="hero-years">2026-2030</span></p>
-          <p class="hero-mission">Transformer un flux touristique<br>en levier économique territorial</p>
+        <div class="hero-stat">
+          <div class="hero-stat-number">6</div>
+          <div class="hero-stat-label">communes unies</div>
         </div>
-        <a href="#parcours" class="hero-btn">🚴 Découvrir les parcours</a>
+        <div class="hero-stat">
+          <div class="hero-stat-number">+15<span>%</span></div>
+          <div class="hero-stat-label">croissance cyclotourisme/an</div>
+        </div>
       </div>
-      <div class="hero-image hero-image-right">
-        <img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=800&h=1000&fit=crop" alt="Cycliste en montagne">
-      </div>
-    </div>
-    <div class="hero-communes">
-      <span>VIZILLE</span><span class="dot">•</span>
-      <span>LES MÉSAGES</span><span class="dot">•</span>
-      <span>MONTCHABOUD</span><span class="dot">•</span>
-      <span>VAULNAVEYS-LE-HAUT</span><span class="dot">•</span>
-      <span>VAULNAVEYS-LE-BAS</span><span class="dot">•</span>
-      <span>JARRIE</span>
     </div>
   </section>
 
-  <!-- ==================== SECTION PARCOURS ==================== -->
-  <section id="parcours" class="section section-cream">
+  <!-- Constat -->
+  <section id="constat" class="section">
     <div class="container">
-      <h2 class="section-title">Nos Parcours</h2>
-      <p class="section-subtitle">Explorez le territoire à vélo ou à pied</p>
+      <div class="section-header">
+        <span class="section-num">01</span>
+        <h2>Le Constat</h2>
+        <p class="section-intro">Un potentiel économique inexploité</p>
+      </div>
       
-      <!-- Onglets Vélo / Rando -->
-      <div class="parcours-tabs">
-        <button class="parcours-tab active" data-tab="velo">🚴 Itinéraires Vélo</button>
-        <button class="parcours-tab" data-tab="rando">🥾 Randonnées Pédestres</button>
-      </div>
-
-      <!-- ===== ITINÉRAIRES VÉLO ===== -->
-      <div class="parcours-content active" id="tab-velo">
-        <div class="parcours-grid">
-          
-          <!-- Boucle Familiale -->
-          <div class="parcours-card" data-color="green">
-            <div class="parcours-card-header green">
-              <span class="parcours-badge">Facile</span>
-              <span class="parcours-type">🚴 Vélo</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Boucle Familiale</h3>
-              <p class="parcours-subtitle">Autour du Château de Vizille</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">15</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">120</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">1h15</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Parcours plat idéal pour les familles et les VAE. Longe les berges de la Romanche avec vue sur le Château et le massif de Belledonne.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🏰 Château de Vizille & Parc</li>
-                  <li>🌊 Berges de la Romanche</li>
-                  <li>🌳 Parc naturel de Vizille</li>
-                  <li>☕ Cafés et restaurants du centre</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.komoot.com/fr-fr/discover/Vizille" target="_blank" class="btn-parcours">📍 Voir sur Komoot</a>
-                <a href="https://www.strava.com/segments/explore#702500" target="_blank" class="btn-parcours btn-secondary">📊 Strava</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Boucle Patrimoine -->
-          <div class="parcours-card" data-color="blue">
-            <div class="parcours-card-header blue">
-              <span class="parcours-badge">Modéré</span>
-              <span class="parcours-type">🚴 Vélo</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Boucle Patrimoine</h3>
-              <p class="parcours-subtitle">Villages des Coteaux</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">40</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">450</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">2h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Circuit panoramique traversant les villages de Montchaboud, Les Mésages et les Vaulnaveys. Vues imprenables sur Belledonne.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🏘️ Village de Montchaboud</li>
-                  <li>⛪ Église des Mésages</li>
-                  <li>🏔️ Panorama Belledonne</li>
-                  <li>🍷 Cave coopérative locale</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.komoot.com/fr-fr/discover/Vizille" target="_blank" class="btn-parcours">📍 Voir sur Komoot</a>
-                <a href="https://www.strava.com/segments/explore#702500" target="_blank" class="btn-parcours btn-secondary">📊 Strava</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Boucle Sportive -->
-          <div class="parcours-card" data-color="ocre">
-            <div class="parcours-card-header ocre">
-              <span class="parcours-badge">Difficile</span>
-              <span class="parcours-type">🚴 Vélo</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Boucle Sportive</h3>
-              <p class="parcours-subtitle">Tour des Vaulnaveys vers Uriage</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">55</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">850</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">3h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Circuit exigeant avec montée vers Uriage-les-Bains. Passages techniques et dénivelé soutenu. Récompense : les Thermes !</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>♨️ Thermes d'Uriage</li>
-                  <li>🏰 Château d'Uriage</li>
-                  <li>🌲 Forêt de Prémol</li>
-                  <li>⛰️ Col de la Crête</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.komoot.com/fr-fr/discover/Uriage-les-Bains" target="_blank" class="btn-parcours">📍 Voir sur Komoot</a>
-                <a href="https://www.strava.com/segments/explore#702500" target="_blank" class="btn-parcours btn-secondary">📊 Strava</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Boucle Oisans -->
-          <div class="parcours-card" data-color="black">
-            <div class="parcours-card-header black">
-              <span class="parcours-badge">Expert</span>
-              <span class="parcours-type">🚴 Vélo</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Boucle Oisans / Expert</h3>
-              <p class="parcours-subtitle">Portes de l'Alpe d'Huez</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">70</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">1200</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">4h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">L'itinéraire mythique vers Bourg-d'Oisans. Préparation idéale pour l'Alpe d'Huez. Paysages de haute montagne spectaculaires.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🏔️ Gorges de la Romanche</li>
-                  <li>🚵 Bourg-d'Oisans (capitale du vélo)</li>
-                  <li>💎 Musée des Minéraux</li>
-                  <li>🎿 Vue sur l'Alpe d'Huez</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.komoot.com/fr-fr/discover/Bourg-d'Oisans" target="_blank" class="btn-parcours">📍 Voir sur Komoot</a>
-                <a href="https://www.strava.com/segments/631003" target="_blank" class="btn-parcours btn-secondary">📊 Strava</a>
-              </div>
-            </div>
-          </div>
-
+      <div class="constat-grid">
+        <div class="constat-card constat-problem">
+          <h3>Le Problème</h3>
+          <p>Le Château de Vizille est un <strong>site majeur de l'Isère</strong> avec 800 000 visiteurs annuels.</p>
+          <p>Mais les <strong>retombées économiques locales sont limitées</strong>. Les visiteurs repartent sans consommer.</p>
+          <div class="constat-icon">⚠️</div>
+        </div>
+        
+        <div class="constat-card constat-opportunity">
+          <h3>L'Opportunité</h3>
+          <p>Chaque visiteur qui reste <strong>une nuit supplémentaire</strong> génère en moyenne <strong>80€ à 120€</strong> de retombées locales.</p>
+          <p>800 000 visiteurs × 1 nuit = <strong>Transformation économique</strong></p>
+          <div class="constat-icon">💡</div>
         </div>
       </div>
-
-      <!-- ===== RANDONNÉES PÉDESTRES ===== -->
-      <div class="parcours-content" id="tab-rando">
-        <div class="parcours-grid">
-          
-          <!-- Rando Parc du Château -->
-          <div class="parcours-card" data-color="green">
-            <div class="parcours-card-header green">
-              <span class="parcours-badge">Facile</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Parc du Château</h3>
-              <p class="parcours-subtitle">Balade dans le domaine</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">3</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">50</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">1h</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Promenade accessible à tous dans le parc de 100 hectares du Château de Vizille. Animaux en liberté, jardins à la française.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🦌 Cerfs et daims en liberté</li>
-                  <li>🌷 Jardins à la française</li>
-                  <li>🏛️ Musée de la Révolution</li>
-                  <li>🌳 Arbres centenaires</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.chateau-vizille.fr" target="_blank" class="btn-parcours">🏰 Site officiel</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rando Crêtes de Malbouchet -->
-          <div class="parcours-card" data-color="ocre">
-            <div class="parcours-card-header ocre">
-              <span class="parcours-badge">Difficile</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Crêtes de Malbouchet</h3>
-              <p class="parcours-subtitle">Panorama 360° sur Belledonne</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">12</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">650</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">4h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Randonnée sportive offrant une vue exceptionnelle à 360° sur Belledonne, le Vercors et la vallée du Grésivaudan.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🏔️ Sommet panoramique</li>
-                  <li>🌲 Forêts de hêtres</li>
-                  <li>🦅 Observation rapaces</li>
-                  <li>🍄 Cueillette (saison)</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.visorando.com/randonnee-cretes-de-malbouchet/" target="_blank" class="btn-parcours">📍 Voir sur Visorando</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rando Lac Achard -->
-          <div class="parcours-card" data-color="blue">
-            <div class="parcours-card-header blue">
-              <span class="parcours-badge">Modéré</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Lac Achard</h3>
-              <p class="parcours-subtitle">Joyau de Chamrousse</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">6</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">350</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">2h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Randonnée familiale vers le lac Achard (1917m), un des plus beaux lacs de Belledonne. Accessible depuis Chamrousse.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>💎 Lac d'altitude cristallin</li>
-                  <li>🏔️ Vue sur les sommets</li>
-                  <li>🌸 Flore alpine</li>
-                  <li>📸 Spot photo incontournable</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.visorando.com/randonnee-lac-achard/" target="_blank" class="btn-parcours">📍 Voir sur Visorando</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rando GR738 -->
-          <div class="parcours-card" data-color="black">
-            <div class="parcours-card-header black">
-              <span class="parcours-badge">Expert</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>GR®738 - Traversée Belledonne</h3>
-              <p class="parcours-subtitle">Le Sentier des Bergers</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">130</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">8500</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">11j</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">La grande traversée de Belledonne, de Vizille à Aiguebelle. Itinéraire mythique en 11 étapes à travers alpages et sommets.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🏔️ Sommets à +2500m</li>
-                  <li>🐄 Alpages et refuges</li>
-                  <li>💎 Lacs d'altitude</li>
-                  <li>🦌 Faune sauvage (chamois, bouquetins)</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.mongr.fr/sentier/96/gr-738-haute-traversee-de-belledonne" target="_blank" class="btn-parcours">📍 Voir sur MonGR</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rando Thermes Uriage -->
-          <div class="parcours-card" data-color="green">
-            <div class="parcours-card-header green">
-              <span class="parcours-badge">Facile</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Sentier des Thermes</h3>
-              <p class="parcours-subtitle">Vizille → Uriage par les bois</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">8</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">280</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">2h30</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Liaison douce entre Vizille et les Thermes d'Uriage. Sentier ombragé parfait pour une sortie en famille avec récompense thermale !</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>🌲 Forêt de Prémol</li>
-                  <li>♨️ Thermes d'Uriage</li>
-                  <li>🏰 Château d'Uriage</li>
-                  <li>🍽️ Restaurants gastronomiques</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.uriage-les-bains.com" target="_blank" class="btn-parcours">♨️ Thermes d'Uriage</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rando Lacs Belledonne -->
-          <div class="parcours-card" data-color="blue">
-            <div class="parcours-card-header blue">
-              <span class="parcours-badge">Modéré</span>
-              <span class="parcours-type">🥾 Rando</span>
-            </div>
-            <div class="parcours-card-body">
-              <h3>Circuit des Lacs</h3>
-              <p class="parcours-subtitle">Lac du Crozet & Lac Blanc</p>
-              
-              <div class="parcours-stats">
-                <div class="stat"><span class="stat-value">14</span><span class="stat-unit">km</span></div>
-                <div class="stat"><span class="stat-value">750</span><span class="stat-unit">m D+</span></div>
-                <div class="stat"><span class="stat-value">5h</span><span class="stat-unit">durée</span></div>
-              </div>
-              
-              <p class="parcours-desc">Boucle reliant les plus beaux lacs de Belledonne. Paysages alpins grandioses et possibilité d'observer des bouquetins.</p>
-              
-              <div class="parcours-points">
-                <h4>Points d'intérêt</h4>
-                <ul>
-                  <li>💎 Lac du Crozet</li>
-                  <li>❄️ Lac Blanc (2450m)</li>
-                  <li>🦌 Bouquetins</li>
-                  <li>🌺 Flore alpine rare</li>
-                </ul>
-              </div>
-              
-              <div class="parcours-actions">
-                <a href="https://www.visorando.com/randonnee-lac-du-crozet/" target="_blank" class="btn-parcours">📍 Voir sur Visorando</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Section Packages -->
-  <section id="sejours" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title section-title-light">Packages Séjours</h2>
-      <p class="section-subtitle-light">Hébergement + Activité + Terroir</p>
       
-      <div class="packages-grid">
-        <div class="package-ticket package-vert">
-          <div class="ticket-header"><span class="ticket-icon">👨‍👩‍👧</span></div>
-          <div class="ticket-body">
-            <h3>Week-end<br>Découverte</h3>
-            <hr class="ticket-divider">
-            <p class="ticket-public">Public : Famille</p>
-            <p>🏨 1 nuit, Visite Château,<br>🚴 Boucle Verte,<br>🍽️ Repas Terroir.</p>
+      <div class="funnel-section">
+        <h3>De flux à stock : la conversion</h3>
+        <div class="funnel">
+          <div class="funnel-step funnel-1">
+            <strong>FLUX</strong>
+            <span>Visiteurs de passage</span>
           </div>
-        </div>
-        <div class="package-ticket package-bleu">
-          <div class="ticket-header"><span class="ticket-icon">🚴</span></div>
-          <div class="ticket-body">
-            <h3>Séjour<br>Sportif</h3>
-            <hr class="ticket-divider">
-            <p class="ticket-public">Public : Cyclosportifs</p>
-            <p>📅 3 jours, Boucle<br>🚴 Rouge/Noire, Massage<br>♨️ Récupération (Uriage).</p>
+          <div class="funnel-arrow">→</div>
+          <div class="funnel-step funnel-2">
+            <strong>APPROCHE</strong>
+            <span>Capter & Orienter</span>
           </div>
-        </div>
-        <div class="package-ticket package-ocre">
-          <div class="ticket-header"><span class="ticket-icon">🥾</span></div>
-          <div class="ticket-body">
-            <h3>Rando<br>& Bien-être</h3>
-            <hr class="ticket-divider">
-            <p class="ticket-public">Public : Randonneurs</p>
-            <p>🥾 2 jours de randonnée,<br>♨️ Soins aux Thermes,<br>🏨 Nuit à Uriage.</p>
+          <div class="funnel-arrow">→</div>
+          <div class="funnel-step funnel-3">
+            <strong>OBJECTIF</strong>
+            <span>Client local</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Section Carte -->
-  <section id="carte" class="section section-white">
+  <!-- Stratégie -->
+  <section id="strategie" class="section section-alt">
     <div class="container">
-      <h2 class="section-title">Explorer le Territoire</h2>
-      <p class="section-subtitle">Carte interactive des parcours et points d'intérêt</p>
-      <div class="map-wrapper">
-        <div class="map-filters">
-          <button class="map-filter active" data-filter="all">Tout</button>
-          <button class="map-filter" data-filter="velo">🚴 Vélo</button>
-          <button class="map-filter" data-filter="rando">🥾 Rando</button>
-          <button class="map-filter" data-filter="patrimoine">🏰 Patrimoine</button>
+      <div class="section-header">
+        <span class="section-num">02</span>
+        <h2>La Stratégie</h2>
+        <p class="section-intro">Le cyclotourisme comme moteur économique</p>
+      </div>
+      
+      <div class="strategy-intro">
+        <p>Le vélo n'est pas qu'un loisir, c'est un <strong>moteur économique</strong>. Le marché du cyclotourisme en France connaît une croissance de <strong>+15% par an</strong>.</p>
+      </div>
+      
+      <div class="strategy-grid">
+        <div class="strategy-card">
+          <span class="strategy-icon">💰</span>
+          <h4>Pouvoir d'achat élevé</h4>
+          <p>Clientèle CSP+ avec budget vacances supérieur à la moyenne</p>
         </div>
-        <div id="map" class="map-container"></div>
+        <div class="strategy-card">
+          <span class="strategy-icon">📅</span>
+          <h4>Séjours longs</h4>
+          <p>Durée moyenne supérieure au tourisme de passage classique</p>
+        </div>
+        <div class="strategy-card">
+          <span class="strategy-icon">☀️</span>
+          <h4>Saisonnalité étendue</h4>
+          <p>Activité d'avril à octobre, complément au ski hivernal</p>
+        </div>
+        <div class="strategy-card">
+          <span class="strategy-icon">🗺️</span>
+          <h4>Position carrefour</h4>
+          <p>Porte d'entrée vers l'Oisans, le Vercors, la Matheysine</p>
+        </div>
+      </div>
+      
+      <div class="parcours-section">
+        <h3>4 Boucles structurantes</h3>
+        <p class="parcours-intro">Du débutant au grimpeur, une offre complète</p>
+        <div class="parcours-grid">
+          <div class="parcours-card parcours-vert">
+            <div class="parcours-header">
+              <span class="parcours-km">15 km</span>
+              <span class="parcours-level">Familiale</span>
+            </div>
+            <p>Autour du Château. Berges de la Romanche. Idéal familles & VAE.</p>
+          </div>
+          <div class="parcours-card parcours-bleu">
+            <div class="parcours-header">
+              <span class="parcours-km">40 km</span>
+              <span class="parcours-level">Patrimoine</span>
+            </div>
+            <p>Villages des Coteaux. Panoramas Belledonne. Vizille - Montchaboud.</p>
+          </div>
+          <div class="parcours-card parcours-ocre">
+            <div class="parcours-header">
+              <span class="parcours-km">55 km</span>
+              <span class="parcours-level">Sportive</span>
+            </div>
+            <p>Tour des Vaulnaveys. Dénivelé important. Incursion vers Uriage.</p>
+          </div>
+          <div class="parcours-card parcours-noir">
+            <div class="parcours-header">
+              <span class="parcours-km">70 km</span>
+              <span class="parcours-level">Oisans / Expert</span>
+            </div>
+            <p>Portes de l'Oisans. Préparation Alpe d'Huez. Séchilienne - Bourg d'Oisans.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Territoire -->
+  <section id="territoire" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">03</span>
+        <h2>Une Réponse Territoriale à 6 Communes</h2>
+        <p class="section-intro">Passer de "Vizille centre" à "Porte des Alpes"</p>
+      </div>
+      
+      <div class="territoire-intro">
+        <p>L'alliance permet de créer une <strong>destination complète</strong> où le calme rural complète l'offre urbaine et patrimoniale.</p>
+      </div>
+      
+      <div class="communes-grid">
+        <div class="commune-card">
+          <div class="commune-marker" style="background: var(--slate)"></div>
+          <h4>Vizille</h4>
+          <p class="commune-role">Hub touristique & Patrimoine</p>
+          <p>Point d'entrée, Château, commerces, services</p>
+        </div>
+        <div class="commune-card">
+          <div class="commune-marker" style="background: var(--ocre)"></div>
+          <h4>Jarrie</h4>
+          <p class="commune-role">Hôtellerie & Business</p>
+          <p>Accès A480, clientèle affaires, foncier disponible</p>
+        </div>
+        <div class="commune-card">
+          <div class="commune-marker" style="background: var(--green)"></div>
+          <h4>Vaulnaveys-le-Haut</h4>
+          <p class="commune-role">Sport & Montagne</p>
+          <p>Refuges, B&B cyclistes, départ boucles sportives</p>
+        </div>
+        <div class="commune-card">
+          <div class="commune-marker" style="background: #6366f1"></div>
+          <h4>Vaulnaveys-le-Bas</h4>
+          <p class="commune-role">Centralité & Chambres d'hôtes</p>
+          <p>Position centrale, hébergement familial</p>
+        </div>
+        <div class="commune-card">
+          <div class="commune-marker" style="background: #ec4899"></div>
+          <h4>Montchaboud</h4>
+          <p class="commune-role">Nature & Hébergement Insolite</p>
+          <p>Cabanes, yourtes, tiny houses</p>
+        </div>
+        <div class="commune-card">
+          <div class="commune-marker" style="background: #14b8a6"></div>
+          <h4>Les Mésages</h4>
+          <p class="commune-role">Authenticité & Gîtes</p>
+          <p>Gîtes ruraux, fermes, terroir</p>
+        </div>
+      </div>
+      
+      <div class="hebergement-section">
+        <h3>Stratégie d'Hébergement : Une Offre Complémentaire</h3>
+        <table class="hebergement-table">
+          <thead>
+            <tr>
+              <th>Segment</th>
+              <th>Communes Cibles</th>
+              <th>Type d'Offre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="segment-icon">💼</span> Affaires & Flux</td>
+              <td>Jarrie</td>
+              <td>Hôtellerie économique, Appart-hôtel</td>
+            </tr>
+            <tr>
+              <td><span class="segment-icon">🏰</span> Charme & Patrimoine</td>
+              <td>Vizille Centre</td>
+              <td>Chambres d'hôtes, Boutique hôtel</td>
+            </tr>
+            <tr>
+              <td><span class="segment-icon">🌿</span> Nature & Famille</td>
+              <td>Les Mésages, Vaulnaveys-le-Bas</td>
+              <td>Gîtes ruraux, Fermes</td>
+            </tr>
+            <tr>
+              <td><span class="segment-icon">🏕️</span> Expérientiel / Insolite</td>
+              <td>Montchaboud</td>
+              <td>Cabanes, Yourtes, Tiny Houses</td>
+            </tr>
+            <tr>
+              <td><span class="segment-icon">🚴</span> Sport & Étape</td>
+              <td>Vaulnaveys-le-Haut</td>
+              <td>Refuges, B&B Cyclistes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projets Phares -->
+  <section id="projets" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">04</span>
+        <h2>Les Projets Phares</h2>
+        <p class="section-intro">Actions structurantes du plan 2026-2030</p>
+      </div>
+      
+      <div class="projet-feature">
+        <div class="projet-feature-content">
+          <span class="projet-badge">Projet Structurant</span>
+          <h3>L'Implantation Hôtelière à Jarrie</h3>
+          
+          <div class="projet-cols">
+            <div class="projet-col">
+              <h4>Pourquoi Jarrie ?</h4>
+              <ul>
+                <li>Proximité immédiate A480 & Grenoble (15 min)</li>
+                <li>Zone d'activités (Clientèle d'affaires)</li>
+                <li>Foncier disponible et stratégique</li>
+              </ul>
+            </div>
+            <div class="projet-col">
+              <h4>Le Dossier d'Attractivité</h4>
+              <ul>
+                <li>Flux garanti : 800 000 visiteurs/an (Château)</li>
+                <li>Porte d'entrée vers l'Oisans et stations de ski</li>
+                <li>Complémentarité avec le Thermalisme d'Uriage</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="projet-targets">
+            <h4>Cibles Investisseurs</h4>
+            <div class="targets-grid">
+              <div class="target">
+                <strong>1. Économique</strong>
+                <p>B&B Hotels, Ibis Budget</p>
+              </div>
+              <div class="target">
+                <strong>2. Charme & Standard</strong>
+                <p>Logis Hôtels, Best Western</p>
+              </div>
+              <div class="target">
+                <strong>3. Indépendants</strong>
+                <p>Investisseurs locaux</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="projet-secondary">
+        <div class="projet-card">
+          <h4>🏕️ Hébergement Insolite</h4>
+          <p><strong>Lieux :</strong> Montchaboud, Vaulnaveys-le-Haut</p>
+          <p><strong>Avantages :</strong> Investissements légers, fort attrait marketing</p>
+          <ul>
+            <li>Plateforme : "Dormir autour de Vizille"</li>
+            <li>Label : "Nuit insolite aux portes de Vizille"</li>
+            <li>Aides régionales mobilisables (30%)</li>
+            <li>Accompagnement administratif (PLU)</li>
+          </ul>
+        </div>
+        
+        <div class="projet-card">
+          <h4>🚴 Infrastructures Accueil Vélo</h4>
+          <p><strong>Objectif :</strong> Labelliser 20 établissements sur le territoire</p>
+          <div class="infra-grid">
+            <div class="infra-item">🔒 Arceaux sécurisés<br><small>Centres-bourgs</small></div>
+            <div class="infra-item">🔌 Bornes VAE<br><small>Recharge électrique</small></div>
+            <div class="infra-item">🔧 Stations gonflage<br><small>& réparation</small></div>
+            <div class="infra-item">💧 Points d'eau<br><small>Potable</small></div>
+          </div>
+          <p><strong>Services :</strong> Navettes Bourg-d'Oisans & Uriage, Transfert bagages, Location & Réparation</p>
+        </div>
+        
+        <div class="projet-card">
+          <h4>📦 Packages Touristiques</h4>
+          <p><strong>La fusion :</strong> Hébergement + Activité + Terroir</p>
+          <div class="packages-mini">
+            <div class="package-mini">
+              <strong>Week-end Découverte</strong>
+              <span>Famille • 1 nuit</span>
+            </div>
+            <div class="package-mini">
+              <strong>Séjour Sportif</strong>
+              <span>Cyclosportifs • 3 jours</span>
+            </div>
+            <div class="package-mini">
+              <strong>Itinérance 6 Villages</strong>
+              <span>Voyageurs vélo • Étapes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Écosystème -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">05</span>
+        <h2>L'Écosystème Partenarial</h2>
+        <p class="section-intro">Un réseau de partenaires autour de "Vizille Vélo"</p>
+      </div>
+      
+      <div class="ecosystem-grid">
+        <div class="ecosystem-card eco-green">
+          <h4>🍽️ Restaurateurs</h4>
+          <ul>
+            <li>Menus énergétiques</li>
+            <li>Horaires flexibles</li>
+          </ul>
+        </div>
+        <div class="ecosystem-card eco-ocre">
+          <h4>🏪 Producteurs Locaux</h4>
+          <ul>
+            <li>Vente directe</li>
+            <li>Paniers pique-nique</li>
+          </ul>
+        </div>
+        <div class="ecosystem-card eco-blue">
+          <h4>♨️ Thermes d'Uriage</h4>
+          <ul>
+            <li>Partenaire stratégique</li>
+            <li>Bien-être & Récupération</li>
+          </ul>
+        </div>
+        <div class="ecosystem-card eco-purple">
+          <h4>📱 Marketing Digital</h4>
+          <ul>
+            <li>Strava, Komoot</li>
+            <li>France Vélo Tourisme</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="event-box">
+        <strong>Événementiel :</strong> Création du "Tour des 6 villages" et accueil d'étapes du Dauphiné.
+      </div>
+    </div>
+  </section>
+
+  <!-- Gouvernance -->
+  <section id="gouvernance" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">06</span>
+        <h2>Gouvernance & Pilotage Partagé</h2>
+        <p class="section-intro">Une organisation claire et efficace</p>
+      </div>
+      
+      <div class="gouvernance-schema">
+        <div class="gouv-level gouv-top">
+          <div class="gouv-box gouv-copil">
+            <h4>COMITÉ DE PILOTAGE (CoPil)</h4>
+            <p>Élus des 6 communes + Représentant Château (Département)</p>
+          </div>
+        </div>
+        
+        <div class="gouv-arrow">↓</div>
+        
+        <div class="gouv-level">
+          <div class="gouv-box gouv-coord">
+            <h4>COORDINATION OPÉRATIONNELLE</h4>
+            <p>Office de Tourisme Intercommunal</p>
+          </div>
+        </div>
+        
+        <div class="gouv-arrow">↓</div>
+        
+        <div class="gouv-level gouv-bottom">
+          <div class="gouv-box gouv-partner">
+            <h5>Partenaires Privés</h5>
+            <p>Hébergeurs, Commerçants</p>
+          </div>
+          <div class="gouv-box gouv-partner">
+            <h5>Associations Cyclistes</h5>
+            <p>Clubs locaux</p>
+          </div>
+          <div class="gouv-box gouv-partner">
+            <h5>Thermes d'Uriage</h5>
+            <p>Partenaire bien-être</p>
+          </div>
+          <div class="gouv-box gouv-observer">
+            <h5>Observateur</h5>
+            <p>Grenoble-Alpes Métropole</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financement -->
+  <section id="financement" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">07</span>
+        <h2>Plan de Financement & Leviers de Subventions</h2>
+        <p class="section-intro">Des ressources mobilisables identifiées</p>
+      </div>
+      
+      <table class="finance-table">
+        <thead>
+          <tr>
+            <th>Source de Financement</th>
+            <th>Estimation</th>
+            <th>Cible & Objectif</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="finance-icon">🏔️</span> Région Auvergne-Rhône-Alpes</td>
+            <td><strong class="finance-rate">20% à 40%</strong></td>
+            <td>Hébergements, Itinéraires vélo</td>
+          </tr>
+          <tr>
+            <td><span class="finance-icon">🏛️</span> Département de l'Isère</td>
+            <td><strong class="finance-rate">20% à 30%</strong></td>
+            <td>Tourisme, Voies vertes</td>
+          </tr>
+          <tr>
+            <td><span class="finance-icon">🇪🇺</span> Programme LEADER (Europe)</td>
+            <td><strong class="finance-rate">Jusqu'à 80%</strong></td>
+            <td>Projets ruraux innovants</td>
+          </tr>
+          <tr>
+            <td><span class="finance-icon">🔋</span> ADEME & Métropole</td>
+            <td><strong>Subventions ponctuelles</strong></td>
+            <td>Mobilités douces, Bornes VAE</td>
+          </tr>
+          <tr>
+            <td><span class="finance-icon">💰</span> Auto-financement</td>
+            <td><strong>—</strong></td>
+            <td>Taxe de séjour mutualisée</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Calendrier -->
+  <section id="calendrier" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-num">08</span>
+        <h2>Calendrier Prévisionnel 2026-2032</h2>
+        <p class="section-intro">Une montée en puissance progressive</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item timeline-ct">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Court Terme <span>(1 an)</span></h4>
+            <ul>
+              <li>💻 Lancement Site Web</li>
+              <li>🔒 Installation Arceaux (15 points)</li>
+              <li>🗺️ Identification foncier hôtelier</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-mt">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Moyen Terme <span>(1-3 ans)</span></h4>
+            <ul>
+              <li>🚴 Aménagement 4 boucles</li>
+              <li>🏅 20 Labels Accueil Vélo</li>
+              <li>🏨 Création 15 hébergements</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="timeline-item timeline-lt">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <h4>Long Terme <span>(3-6 ans)</span></h4>
+            <ul>
+              <li>🏨 Ouverture Hôtel Jarrie</li>
+              <li>🛤️ Connexion Via Rhôna complète</li>
+              <li>🎯 Destination de référence</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="section section-conclusion">
+    <div class="container">
+      <div class="conclusion-content">
+        <p class="conclusion-subtitle">Conclusion : Une Ambition Commune</p>
+        <h2 class="conclusion-equation">6 Communes Unies = 1 Destination Forte</h2>
+        <div class="conclusion-formula">
+          <span class="formula-big">800 000 Visiteurs</span>
+          <span class="formula-sign">×</span>
+          <span class="formula-big">1 Nuit Supplémentaire</span>
+          <span class="formula-equals">=</span>
+          <span class="formula-result">Transformation Économique du Territoire</span>
+        </div>
+        <div class="conclusion-cta">
+          Validation de la feuille de route & Lancement du Comité de Pilotage
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <footer id="contact" class="footer">
     <div class="container">
-      <div class="footer-grid">
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <span class="footer-logo-main">VIZILLE</span>
-            <span class="footer-logo-sub">ESCALE<span class="footer-logo-des">DES</span>ALPES</span>
-          </div>
-          <p>Projet de développement touristique<br>Municipales 2026 • Vizille</p>
+      <div class="footer-content">
+        <div class="footer-main">
+          <div class="footer-logo">VIZILLE ESCALE DES ALPES</div>
+          <p>Projet de développement touristique intercommunal<br>Municipales 2026 • Vizille • Économie & Tourisme</p>
         </div>
-        <div class="footer-col">
-          <h4>Parcours Vélo</h4>
-          <a href="#parcours">Boucle Familiale (15 km)</a>
-          <a href="#parcours">Boucle Patrimoine (40 km)</a>
-          <a href="#parcours">Boucle Sportive (55 km)</a>
-          <a href="#parcours">Boucle Oisans (70 km)</a>
-        </div>
-        <div class="footer-col">
-          <h4>Randonnées</h4>
-          <a href="#parcours">Parc du Château</a>
-          <a href="#parcours">Crêtes de Malbouchet</a>
-          <a href="#parcours">Lac Achard</a>
-          <a href="#parcours">GR®738 Belledonne</a>
-        </div>
-        <div class="footer-col">
-          <h4>Partenaires</h4>
-          <a href="https://www.chateau-vizille.fr" target="_blank">Château de Vizille</a>
-          <a href="https://www.uriage-les-bains.com" target="_blank">Thermes d'Uriage</a>
-          <a href="https://www.isere-tourisme.com" target="_blank">Isère Tourisme</a>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>Pour toute information sur ce projet :</p>
+          <a href="mailto:contact@vizille-escale-alpes.fr" class="footer-email">contact@vizille-escale-alpes.fr</a>
         </div>
       </div>
       <div class="footer-bottom">
+        <p>Document à usage interne — Dossier Décideurs</p>
         <p>© 2026 Vizille Escale des Alpes</p>
-        <div class="footer-badges">
-          <span>🏅 Accueil Vélo</span>
-          <span>🏔️ Belledonne</span>
-        </div>
       </div>
     </div>
   </footer>
 
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/map.js"></script>
 </body>
 </html>
