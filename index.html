@@ -21,27 +21,35 @@
       <ul class="nav-menu">
         <li><a href="#parcours" class="nav-link">Parcours</a></li>
         <li><a href="#carte" class="nav-link">Carte</a></li>
+        <li><a href="#evenements" class="nav-link">Événements</a></li>
         <li><a href="#hebergements" class="nav-link">Hébergements</a></li>
-        <li><a href="#communes" class="nav-link">Nos villages</a></li>
-        <li><a href="#contact" class="nav-cta">Planifier ma visite</a></li>
+        <li><a href="#restaurants" class="nav-link">Restaurants</a></li>
+        <li><a href="#contact" class="nav-cta">Planifier</a></li>
       </ul>
       <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
+  <!-- Hero avec météo -->
   <section class="hero">
     <div class="container hero-container">
       <div class="hero-content">
+        <div class="weather-widget" id="weather">
+          <span class="weather-icon">☀️</span>
+          <span class="weather-temp">--°C</span>
+          <span class="weather-loc">Vizille</span>
+        </div>
         <h1>Votre <span class="highlight">escale vélo</span><br>au pied des Alpes</h1>
         <p class="hero-tagline">6 villages authentiques entre patrimoine historique, nature préservée et bien-être. Découvrez un territoire d'exception à votre rythme.</p>
         <div class="hero-stats">
-          <div class="stat"><div class="stat-value">800 000</div><div class="stat-label">Visiteurs/an</div></div>
-          <div class="stat"><div class="stat-value">4</div><div class="stat-label">Boucles vélo</div></div>
-          <div class="stat"><div class="stat-value">6</div><div class="stat-label">Villages</div></div>
+          <div class="stat"><div class="stat-value" data-target="800000">0</div><div class="stat-label">Visiteurs/an</div></div>
+          <div class="stat"><div class="stat-value" data-target="4">0</div><div class="stat-label">Boucles vélo</div></div>
+          <div class="stat"><div class="stat-value" data-target="6">0</div><div class="stat-label">Villages</div></div>
+          <div class="stat"><div class="stat-value" data-target="135">0</div><div class="stat-label">km itinéraires</div></div>
         </div>
         <div class="hero-buttons">
           <a href="#parcours" class="btn btn-primary">🚴 Découvrir les parcours</a>
-          <a href="#carte" class="btn btn-white">🗺️ Voir la carte</a>
+          <a href="#evenements" class="btn btn-white">📅 Prochains événements</a>
         </div>
       </div>
       <div class="hero-visual">
@@ -58,11 +66,82 @@
             <div class="commune-tag"><span class="dot"></span> Montchaboud</div>
             <div class="commune-tag"><span class="dot"></span> Les Mésages</div>
           </div>
+          <div class="next-event">
+            <span class="next-event-label">🏃 Prochain événement</span>
+            <span class="next-event-name">Grenoble-Vizille</span>
+            <span class="next-event-date">29 mars 2026</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Galerie Photos -->
+  <section class="gallery-section">
+    <div class="gallery-track">
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1541625602330-2277a4c46182?w=600&h=400&fit=crop" alt="Cyclistes route montagne"><span class="gallery-caption">Routes panoramiques</span></div>
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=400&fit=crop" alt="Alpes françaises"><span class="gallery-caption">Massif de Belledonne</span></div>
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop" alt="Vélo de route"><span class="gallery-caption">Cyclotourisme</span></div>
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&h=400&fit=crop" alt="Lac montagne"><span class="gallery-caption">Lacs de Belledonne</span></div>
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop" alt="Château"><span class="gallery-caption">Patrimoine historique</span></div>
+      <div class="gallery-slide"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&h=400&fit=crop" alt="Spa bien-être"><span class="gallery-caption">Thermes d'Uriage</span></div>
+    </div>
+  </section>
+
+  <!-- Événements Section -->
+  <section id="evenements" class="section events-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Agenda 2026</span>
+        <h2 class="section-title">Événements cyclistes & sportifs</h2>
+        <p class="section-subtitle">Le territoire accueille des événements majeurs tout au long de l'année</p>
+      </div>
+      <div class="events-grid">
+        <div class="event-card featured">
+          <div class="event-date"><span class="event-day">29</span><span class="event-month">MARS</span></div>
+          <div class="event-content">
+            <span class="event-badge">🏃 Trail & Rando</span>
+            <h3>Grenoble-Vizille</h3>
+            <p>13ème édition ! 4 780 participants en 2025. Trails 30km & 20km, randos 10-21km.</p>
+            <div class="event-stats"><span>📍 Grenoble → Vizille</span><span>👥 5000+ places</span></div>
+            <a href="https://www.grenoble-vizille.fr" target="_blank" class="btn btn-outline">S'inscrire →</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date"><span class="event-day">03</span><span class="event-month">MAI</span></div>
+          <div class="event-content">
+            <span class="event-badge">🚴 Cyclosportive</span>
+            <h3>La Thierry Claveyrolat</h3>
+            <p>Hommage au champion grenoblois. Départ de Vizille, 3 parcours (40-80-130km).</p>
+            <div class="event-stats"><span>📍 Vizille</span><span>⛰️ Jusqu'à 3500m D+</span></div>
+            <a href="https://cyclo-disère.com" target="_blank" class="btn btn-outline">Infos →</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date"><span class="event-day">05</span><span class="event-month">JUIL</span></div>
+          <div class="event-content">
+            <span class="event-badge">🚴 Cyclosportive</span>
+            <h3>La Grenobloise</h3>
+            <p>Challenge Cyclo d'Isère. Balcons de Belledonne et Chartreuse. Arrivée Bastille.</p>
+            <div class="event-stats"><span>📍 Eybens</span><span>🏔️ 45-90-130km</span></div>
+            <a href="https://www.finishers.com/course/la-grenobloise-cyclosportive" target="_blank" class="btn btn-outline">Infos →</a>
+          </div>
+        </div>
+        <div class="event-card">
+          <div class="event-date"><span class="event-day">14</span><span class="event-month">SEPT</span></div>
+          <div class="event-content">
+            <span class="event-badge">🚴 Cyclosportive</span>
+            <h3>L'Impériale Laffrey</h3>
+            <p>Finale du Challenge Cyclo d'Isère. Route Napoléon, lacs de Laffrey.</p>
+            <div class="event-stats"><span>📍 Laffrey</span><span>🏆 Classement final</span></div>
+            <a href="https://www.finishers.com/course/imperiale-cyclosport" target="_blank" class="btn btn-outline">Infos →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carte Interactive -->
   <section id="carte" class="section carte-section">
     <div class="container">
       <div class="section-header">
@@ -76,17 +155,20 @@
           <button class="carte-filter" data-filter="communes">🏘️ Communes</button>
           <button class="carte-filter" data-filter="hebergements">🏨 Hébergements</button>
           <button class="carte-filter" data-filter="patrimoine">🏰 Patrimoine</button>
+          <button class="carte-filter" data-filter="restaurants">🍽️ Restaurants</button>
         </div>
         <div id="map" class="carte-map"></div>
         <div class="carte-legend">
           <div class="legend-item"><span class="legend-dot" style="background:#1e3a5f"></span> Communes</div>
           <div class="legend-item"><span class="legend-dot" style="background:#c9a227"></span> Hébergements</div>
           <div class="legend-item"><span class="legend-dot" style="background:#9c27b0"></span> Patrimoine</div>
+          <div class="legend-item"><span class="legend-dot" style="background:#e74c3c"></span> Restaurants</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Parcours -->
   <section id="parcours" class="section parcours">
     <div class="container">
       <div class="section-header">
@@ -104,33 +186,34 @@
           </div>
         </div>
         <div class="parcours-card moderate">
-          <div class="parcours-header"><span class="parcours-badge">⭐⭐ Modéré</span><h3 class="parcours-name">Boucle Découverte</h3><p class="parcours-route">Les 6 villages</p></div>
+          <div class="parcours-header"><span class="parcours-badge">⭐⭐ Modéré</span><h3 class="parcours-name">Sur les Châteaux de Roues</h3><p class="parcours-route">Vizille → Uriage</p></div>
           <div class="parcours-body">
             <div class="parcours-stats"><div class="parcours-stat"><div class="parcours-stat-value">25</div><div class="parcours-stat-label">km</div></div><div class="parcours-stat"><div class="parcours-stat-value">350</div><div class="parcours-stat-label">m D+</div></div><div class="parcours-stat"><div class="parcours-stat-value">2h30</div><div class="parcours-stat-label">durée</div></div></div>
-            <p class="parcours-desc">Traversée des 6 villages avec points de vue sur Belledonne. Arrêts patrimoine et terroir.</p>
-            <div class="parcours-features"><span class="parcours-feature">🏘️ Villages</span><span class="parcours-feature">🧀 Terroir</span><span class="parcours-feature">📸 Panoramas</span></div>
+            <p class="parcours-desc">Circuit officiel VTT/VAE. Du Château de Vizille au Château d'Uriage via la vallée des Vaulnaveys.</p>
+            <div class="parcours-features"><span class="parcours-feature">🏰 2 Châteaux</span><span class="parcours-feature">♨️ Thermes</span><span class="parcours-feature">📸 Panoramas</span></div>
           </div>
         </div>
         <div class="parcours-card hard">
-          <div class="parcours-header"><span class="parcours-badge">⭐⭐⭐ Difficile</span><h3 class="parcours-name">Boucle Panoramique</h3><p class="parcours-route">Balcons de Belledonne</p></div>
+          <div class="parcours-header"><span class="parcours-badge">⭐⭐⭐ Difficile</span><h3 class="parcours-name">Crêtes de Malbouchet</h3><p class="parcours-route">Balcons de Belledonne</p></div>
           <div class="parcours-body">
             <div class="parcours-stats"><div class="parcours-stat"><div class="parcours-stat-value">40</div><div class="parcours-stat-label">km</div></div><div class="parcours-stat"><div class="parcours-stat-value">750</div><div class="parcours-stat-label">m D+</div></div><div class="parcours-stat"><div class="parcours-stat-value">3h30</div><div class="parcours-stat-label">durée</div></div></div>
-            <p class="parcours-desc">Montée vers les balcons avec vues exceptionnelles. Liaison possible vers Uriage.</p>
-            <div class="parcours-features"><span class="parcours-feature">🏔️ Altitude</span><span class="parcours-feature">💪 Sportif</span><span class="parcours-feature">♨️ Thermes</span></div>
+            <p class="parcours-desc">Montée vers les crêtes avec vue 360° sur Belledonne, Vercors et vallée du Grésivaudan.</p>
+            <div class="parcours-features"><span class="parcours-feature">🏔️ Altitude</span><span class="parcours-feature">💪 Sportif</span><span class="parcours-feature">🌅 Vue 360°</span></div>
           </div>
         </div>
         <div class="parcours-card expert">
-          <div class="parcours-header"><span class="parcours-badge">⭐⭐⭐⭐ Expert</span><h3 class="parcours-name">Boucle Sportive</h3><p class="parcours-route">Tour des Vaulnaveys</p></div>
+          <div class="parcours-header"><span class="parcours-badge">⭐⭐⭐⭐ Expert</span><h3 class="parcours-name">GR®738 Belledonne</h3><p class="parcours-route">Haute Traversée</p></div>
           <div class="parcours-body">
             <div class="parcours-stats"><div class="parcours-stat"><div class="parcours-stat-value">55</div><div class="parcours-stat-label">km</div></div><div class="parcours-stat"><div class="parcours-stat-value">1200</div><div class="parcours-stat-label">m D+</div></div><div class="parcours-stat"><div class="parcours-stat-value">4h30</div><div class="parcours-stat-label">durée</div></div></div>
-            <p class="parcours-desc">Le défi pour cyclistes confirmés. Cols, descentes techniques et panoramas alpins.</p>
-            <div class="parcours-features"><span class="parcours-feature">🏆 Challenge</span><span class="parcours-feature">⛰️ Cols</span><span class="parcours-feature">🎯 Strava</span></div>
+            <p class="parcours-desc">Connexion au GR®738 "Sentier des Bergers". Traversée intégrale possible en 11 jours.</p>
+            <div class="parcours-features"><span class="parcours-feature">🏆 Challenge</span><span class="parcours-feature">⛰️ Alpages</span><span class="parcours-feature">🎯 GR®</span></div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Hébergements -->
   <section id="hebergements" class="section hebergements-section">
     <div class="container">
       <div class="section-header">
@@ -191,24 +274,156 @@
     </div>
   </section>
 
+  <!-- Restaurants -->
+  <section id="restaurants" class="section restaurants-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Gastronomie</span>
+        <h2 class="section-title">Où se restaurer</h2>
+        <p class="section-subtitle">Du restaurant gastronomique au bistrot de terroir, savourez les spécialités locales</p>
+      </div>
+      <div class="restaurants-grid">
+        <div class="restaurant-card gastro">
+          <div class="restaurant-badge">⭐ Gastronomique</div>
+          <h4>Les Terrasses d'Uriage</h4>
+          <p class="restaurant-location">📍 Grand Hôtel Uriage</p>
+          <p class="restaurant-desc">Table étoilée du chef Christophe Aribert. Cuisine créative et produits locaux.</p>
+          <div class="restaurant-price">€€€€</div>
+        </div>
+        <div class="restaurant-card">
+          <div class="restaurant-badge">🌳 Terrasse</div>
+          <h4>Le Floréal</h4>
+          <p class="restaurant-location">📍 Domaine du Château de Vizille</p>
+          <p class="restaurant-desc">Restaurant dans le parc du château. Assiettes savoureuses, cadre exceptionnel.</p>
+          <div class="restaurant-price">€€</div>
+        </div>
+        <div class="restaurant-card">
+          <div class="restaurant-badge">🍕 Italien</div>
+          <h4>Le Chalet Gourmand</h4>
+          <p class="restaurant-location">📍 Vizille centre</p>
+          <p class="restaurant-desc">Pizzas artisanales au feu de bois. Ambiance chaleureuse et conviviale.</p>
+          <div class="restaurant-price">€€</div>
+        </div>
+        <div class="restaurant-card">
+          <div class="restaurant-badge">🥘 Terroir</div>
+          <h4>Restaurant des Mésanges</h4>
+          <p class="restaurant-location">📍 Saint-Martin-d'Uriage</p>
+          <p class="restaurant-desc">Cuisine de terroir dauphinois. Salle moderne avec vue sur les montagnes.</p>
+          <div class="restaurant-price">€€</div>
+        </div>
+        <div class="restaurant-card">
+          <div class="restaurant-badge">🍛 Monde</div>
+          <h4>Houmous & Curry</h4>
+          <p class="restaurant-location">📍 Vizille</p>
+          <p class="restaurant-desc">Cuisine libanaise et indienne fait maison. Mezzés, grillades, plats végétariens.</p>
+          <div class="restaurant-price">€€</div>
+        </div>
+        <div class="restaurant-card">
+          <div class="restaurant-badge">🍳 Bistrot</div>
+          <h4>Chez Jul</h4>
+          <p class="restaurant-location">📍 Route d'Uriage</p>
+          <p class="restaurant-desc">Bistrot chaleureux entre Vizille et Uriage. Cuisine traditionnelle généreuse.</p>
+          <div class="restaurant-price">€€</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activités Nature -->
+  <section id="activites" class="section activites-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nature & Sport</span>
+        <h2 class="section-title">Activités autour du vélo</h2>
+        <p class="section-subtitle">Randonnée, VTT, lacs de montagne, thermes... Prolongez votre séjour</p>
+      </div>
+      <div class="activites-grid">
+        <div class="activite-card">
+          <div class="activite-icon">🥾</div>
+          <h4>Randonnée</h4>
+          <p>GR®738, Lac Achard, Lac du Crozet... Des dizaines d'itinéraires balisés.</p>
+        </div>
+        <div class="activite-card">
+          <div class="activite-icon">🚵</div>
+          <h4>VTT</h4>
+          <p>Crêtes de Brié, descentes techniques, circuits cross-country.</p>
+        </div>
+        <div class="activite-card">
+          <div class="activite-icon">🏔️</div>
+          <h4>Lacs de Belledonne</h4>
+          <p>Lac de Crop, Lac du Crozet, Lac Blanc... Eaux cristallines et bouquetins.</p>
+        </div>
+        <div class="activite-card">
+          <div class="activite-icon">♨️</div>
+          <h4>Thermes d'Uriage</h4>
+          <p>Spa thermal, soins bien-être, récupération sportive.</p>
+        </div>
+        <div class="activite-card">
+          <div class="activite-icon">🎿</div>
+          <h4>Chamrousse</h4>
+          <p>Ski hiver, randonnée été. À 30 min du territoire.</p>
+        </div>
+        <div class="activite-card">
+          <div class="activite-icon">🏰</div>
+          <h4>Patrimoine</h4>
+          <p>Château de Vizille, Musée de la Révolution française. Entrée gratuite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages -->
+  <section class="section testimonials-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Ils sont venus</span>
+        <h2 class="section-title">Témoignages de cyclistes</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"Magnifique territoire entre Grenoble et les Alpes. Le circuit Vizille-Uriage est parfait pour une sortie en famille avec de superbes points de vue."</div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Laurent M.</span>
+            <span class="testimonial-source">Avis Komoot ⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"Super adresse ! Le Grand Hôtel d'Uriage après une grosse sortie vélo, c'est le bonheur. Le spa thermal pour récupérer, un régal."</div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Sophie D.</span>
+            <span class="testimonial-source">Avis Booking ⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">"Le Grenoble-Vizille 2025, une journée inoubliable sous le soleil ! Paysages magnifiques, organisation au top. RDV en 2026 !"</div>
+          <div class="testimonial-author">
+            <span class="testimonial-name">Marc P.</span>
+            <span class="testimonial-source">Participant GV 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Communes -->
   <section id="communes" class="section communes">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Notre territoire</span>
         <h2 class="section-title">6 villages, une destination</h2>
-        <p class="section-subtitle">Chaque commune apporte sa singularité pour créer une expérience touristique complète et authentique.</p>
       </div>
       <div class="communes-showcase">
-        <div class="commune-card"><div class="commune-visual">🏰</div><div class="commune-info"><h3 class="commune-name">Vizille</h3><p class="commune-role">Cœur patrimonial</p><p class="commune-desc">Le Château et son Musée de la Révolution française accueillent 800 000 visiteurs par an.</p></div></div>
-        <div class="commune-card"><div class="commune-visual">🏨</div><div class="commune-info"><h3 class="commune-name">Jarrie</h3><p class="commune-role">Pôle économique</p><p class="commune-desc">Position stratégique près de l'A480. Site privilégié pour le futur hôtel.</p></div></div>
-        <div class="commune-card"><div class="commune-visual">🌲</div><div class="commune-info"><h3 class="commune-name">Vaulnaveys-le-Haut</h3><p class="commune-role">Nature & hébergements</p><p class="commune-desc">Cadre naturel préservé, idéal pour les hébergements insolites.</p></div></div>
-        <div class="commune-card"><div class="commune-visual">🚴</div><div class="commune-info"><h3 class="commune-name">Vaulnaveys-le-Bas</h3><p class="commune-role">Sport & bien-être</p><p class="commune-desc">Porte d'entrée vers les Thermes d'Uriage et nombreux itinéraires cyclistes.</p></div></div>
-        <div class="commune-card"><div class="commune-visual">🌾</div><div class="commune-info"><h3 class="commune-name">Montchaboud</h3><p class="commune-role">Authenticité rurale</p><p class="commune-desc">Village préservé offrant calme et authenticité.</p></div></div>
-        <div class="commune-card"><div class="commune-visual">🏡</div><div class="commune-info"><h3 class="commune-name">Les Mésages</h3><p class="commune-role">Tranquillité & découverte</p><p class="commune-desc">Petit village de caractère, vue imprenable sur la vallée.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🏰</div><div class="commune-info"><h3 class="commune-name">Vizille</h3><p class="commune-role">Cœur patrimonial</p><p class="commune-desc">Château et Musée de la Révolution française. 800 000 visiteurs/an.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🏨</div><div class="commune-info"><h3 class="commune-name">Jarrie</h3><p class="commune-role">Pôle économique</p><p class="commune-desc">Position stratégique près de l'A480. Gare TER Jarrie-Vizille.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🌲</div><div class="commune-info"><h3 class="commune-name">Vaulnaveys-le-Haut</h3><p class="commune-role">Nature & hébergements</p><p class="commune-desc">Cadre naturel préservé, hébergements insolites face à Belledonne.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🚴</div><div class="commune-info"><h3 class="commune-name">Vaulnaveys-le-Bas</h3><p class="commune-role">Sport & bien-être</p><p class="commune-desc">Porte vers les Thermes d'Uriage. Golf et itinéraires cyclistes.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🌾</div><div class="commune-info"><h3 class="commune-name">Montchaboud</h3><p class="commune-role">Authenticité rurale</p><p class="commune-desc">Village préservé, calme et authenticité dauphinoise.</p></div></div>
+        <div class="commune-card"><div class="commune-visual">🏡</div><div class="commune-info"><h3 class="commune-name">Les Mésages</h3><p class="commune-role">Tranquillité</p><p class="commune-desc">Petit village de caractère, vue imprenable sur la vallée.</p></div></div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
   <section class="cta">
     <div class="container">
       <div class="cta-content">
@@ -223,20 +438,26 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer id="contact" class="footer">
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo"><div class="logo-icon">🏔️</div><div class="logo-text">Vizille<span>Escale des Alpes</span></div></div>
-          <p>Un projet de développement touristique intercommunal porté par 6 villages unis pour créer une destination cyclotouristique d'exception.</p>
+          <p>Un projet de développement touristique intercommunal porté par 6 villages unis.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link">📘 Facebook</a>
+            <a href="#" class="social-link">📸 Instagram</a>
+            <a href="#" class="social-link">🎥 YouTube</a>
+          </div>
         </div>
-        <div><h4 class="footer-title">Parcours</h4><div class="footer-links"><a href="#parcours">Boucle Familiale</a><a href="#parcours">Boucle Découverte</a><a href="#parcours">Boucle Panoramique</a><a href="#parcours">Boucle Sportive</a></div></div>
-        <div><h4 class="footer-title">Nos villages</h4><div class="footer-links"><a href="#communes">Vizille</a><a href="#communes">Jarrie</a><a href="#communes">Les Vaulnaveys</a><a href="#communes">Montchaboud</a></div></div>
-        <div><h4 class="footer-title">Partenaires</h4><div class="footer-links"><a href="https://www.chateau-vizille.fr" target="_blank">Château de Vizille</a><a href="https://www.grand-hotel-uriage.com" target="_blank">Grand Hôtel Uriage</a><a href="https://www.uriage-les-bains.com" target="_blank">OT Uriage</a></div></div>
+        <div><h4 class="footer-title">Parcours</h4><div class="footer-links"><a href="#parcours">Boucle Familiale</a><a href="#parcours">Châteaux de Roues</a><a href="#parcours">Crêtes de Malbouchet</a><a href="#parcours">GR®738</a></div></div>
+        <div><h4 class="footer-title">Événements</h4><div class="footer-links"><a href="https://www.grenoble-vizille.fr" target="_blank">Grenoble-Vizille</a><a href="https://cyclo-disère.com" target="_blank">Cyclo d'Isère</a><a href="#evenements">Calendrier 2026</a></div></div>
+        <div><h4 class="footer-title">Partenaires</h4><div class="footer-links"><a href="https://www.chateau-vizille.fr" target="_blank">Château de Vizille</a><a href="https://www.grand-hotel-uriage.com" target="_blank">Grand Hôtel Uriage</a><a href="https://www.uriage-les-bains.com" target="_blank">OT Uriage</a><a href="https://www.isere-tourisme.com" target="_blank">Isère Tourisme</a></div></div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Vizille Escale des Alpes — Projet intercommunal</p>
-        <div class="footer-partners"><span class="partner-badge">🏅 Accueil Vélo</span><span class="partner-badge">🏔️ Isère Tourisme</span></div>
+        <div class="footer-partners"><span class="partner-badge">🏅 Accueil Vélo</span><span class="partner-badge">🏔️ Isère Tourisme</span><span class="partner-badge">🌿 Belledonne</span></div>
       </div>
     </div>
   </footer>
